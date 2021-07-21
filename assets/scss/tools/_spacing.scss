@@ -1,0 +1,28 @@
+// Layout spacing
+// xl: 160px
+// l:	 80px
+// m:  60px
+// s:  30px
+
+// bottom
+.spacing-bottom-xl {
+	margin-bottom: clamp(8rem, #{$spacing-vertical-xl}, 16rem);
+}
+
+
+
+.spacing-bottom-l {
+	margin-bottom: clamp(4rem, #{$spacing-vertical-l}, 8rem);
+}
+
+
+
+.spacing-bottom-m {
+	margin-bottom: clamp(3rem, #{$spacing-vertical-m}, 6rem);
+}
+
+
+.spacing-bottom-s {
+	margin-bottom: clamp(1.5rem, #{$spacing-vertical-s}, 3rem);
+}
+

@@ -1,0 +1,57 @@
+@mixin basic-font-style {
+font-size: 16px;
+}
+
+h1,
+.headline-1,
+h2,
+.headline-2,
+h3,
+.headline-3{
+	display: block;
+}
+
+h1,
+.headline-1 {
+	font-size: clamp(2.8rem, 4.167vw, 7.2rem);
+}
+
+h2,
+.headline-2 {
+	font-size: clamp(2.5rem, 3.333vw, 6.8rem);
+}
+
+h3,
+.headline-3 {
+	font-size: clamp(2.4rem, 2.5vw, 2.8rem);
+}
+
+
+p {
+	@include basic-font-style;
+}
+
+a {
+	@include basic-font-style;
+
+}
+
+ul li,
+ol li {
+	@include basic-font-style;
+}
+
+ul li p,
+ol li p {
+	@include basic-font-style;
+}
+
+b,
+strong,
+.text-bold {
+
+}
+
+i {
+	font-style: italic;
+}
