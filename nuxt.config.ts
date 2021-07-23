@@ -38,10 +38,28 @@ export default {
 		"nuxt-purgecss",
 		"@nuxt/typescript-build",
 		"nuxt-gsap-module",
+		"nuxt-graphql-request",
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
+
+	graphql: {
+		clients: {
+			default: {
+				endpoint: process.env.GRAPHQL_ENDPOINT,
+				options: {
+					headers: {
+						authorization:
+							"Bearer " +
+							(process.env.BASE_URL === "https://portfolio-preview-hh4qq.ondigitalocean.app/"
+								? process.env.GRAPHQL_PREVIEW_TOKEN
+								: process.env.GRAPHQL_TOKEN),
+					},
+				},
+			},
+		},
+	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
