@@ -1,3 +1,5 @@
+
+import { extendRoutes, generate } from "./configurations/router";
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
 	target: "static",
@@ -19,15 +21,22 @@ export default {
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: ["@/assets/scss/styles.scss"],
+	router: {
+		trailingSlash: true,
+		linkActiveClass: "is-active",
+		extendRoutes: async (routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
+	},
 	generate: {
 		fallback: true,
 		// exclude pages thats unused
 		// eg. [/about/, /news/]
-		exclude: [],
+		exclude: [/ContentPage/],
+		crawler: false,
+		 routes: async () => await generate(),
 	},
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	plugins: ["~/plugins/cms"],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: [{ path: "~/components", extensions: ["vue"] }],
