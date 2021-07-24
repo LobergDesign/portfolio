@@ -23,6 +23,7 @@
     "eslint-config-prettier": "^8.3.0",
     "fibers": "^5.0.0",
     "graphql": "^15.5.1",
+    "nuxt-font-loader": "^1.1.3",
     "nuxt-graphql-request": "^4.0.1",
     "nuxt-gsap-module": "^1.3.2",
     "nuxt-purgecss": "^1.0.0",

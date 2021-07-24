@@ -1,4 +1,3 @@
-
 import { extendRoutes, generate } from "./configurations/router";
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
@@ -32,7 +31,7 @@ export default {
 		// eg. [/about/, /news/]
 		exclude: [/ContentPage/],
 		crawler: false,
-		 routes: async () => await generate(),
+		routes: async () => await generate(),
 	},
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -45,11 +44,20 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"nuxt-purgecss",
+		"nuxt-font-loader",
 		"@nuxt/typescript-build",
 		"nuxt-gsap-module",
 		"nuxt-graphql-request",
 	],
-
+	fontLoader: {
+		url: {
+			local: "/fonts/font-face.css",
+			google: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap",
+		},
+		// Enable options
+		prefetch: true,
+		preconnect: true
+	},
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
 

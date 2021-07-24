@@ -6,6 +6,7 @@ declare module "*.svg?inline" {
 declare interface IMenuItems{
 	model: string;
 	slug: string;
+	menuName?: string;
 
 }
 declare interface IRouteItems{
@@ -20,4 +21,21 @@ declare interface IGsap {
 	registerPlugin: Function;
 	set: Function;
 	timeline: Function;
+}
+
+// header
+declare interface IHeader{
+	mainMenuCollection: Array<IMenuItems>;
+	headerValueOne: string;
+	headerValueTwo: string;
+}
+
+// footer
+declare interface IFooter{
+	footerCtaText: string;
+	email: string;
+	facebook: string;
+	linkedIn: string;
+	phoneNumber: string;
+	rotateEffectText: string;
 }

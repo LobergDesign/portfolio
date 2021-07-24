@@ -1,0 +1,15 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.circular-effect {
+	max-width: 400px;
+	max-height: 400px;
+
+}
+text {
+	@include font-primary;
+	font-size: 10.5px;
+    letter-spacing: .8px;
+	fill: $color-main-light;
+}

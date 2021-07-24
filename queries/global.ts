@@ -2,10 +2,19 @@ const query = `query globalSettingsEntryQuery {
     globalSettings(id: "4exnZopd4FhVaVLSGW87R1") {
       mainMenuCollection(limit:5) {
         items {
-               model: __typename
+          model: __typename
           slug
+          menuName
         }
       }
+      headerValueOne
+      headerValueTwo
+      footerCtaText
+      rotateEffectText
+      email
+      phoneNumber
+      linkedIn
+      facebook
     }
   }`;
 export { query };
