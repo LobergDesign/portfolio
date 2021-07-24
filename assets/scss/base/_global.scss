@@ -1,4 +1,16 @@
+// dark default theme
+:root {
+	--color-primary: #{$color-main-dark};
+	--color-secondary: #{$color-main-light};
+}
+
+.light-mode {
+	--color-primary: #{$color-main-light};
+	--color-secondary: #{$color-main-dark};
+}
+
 html {
+	font-size: 62.5%;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -7,8 +19,64 @@ html {
 }
 
 body {
+	background-color: var(--color-primary);
+	color: var(--color-secondary);
 	font-size: 1.6rem;
+	transition: background-color $transition, color $transition;
 }
+
+// link hover effect
+.cta {
+	position: relative;
+	display: block;
+	height: 18rem;
+	width: 100%;
+	overflow: hidden;
+	&__text {
+		@include font-primary;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: clamp(3.8rem, 6.389vw, 14.2rem);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	&__reveal {
+		@include font-secondary-bold;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(100%) skew(-.800rad);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	&__reveal--mail {
+		font-size: clamp(1.8rem, 6vw, 10rem);
+	}
+	// icon
+	&__icon {
+		position: absolute;
+		right: 0;
+		margin-top: 5rem;
+		transition: transform $transition;
+	}
+}
+
+@include viewport-mouse{
+	.cta:hover{
+		.cta__text{
+			transform: translateY(-22rem) skew(.800rad);
+		}
+		.cta__reveal{
+			transform: translateY(-60%) skew(0);
+		}
+		.cta__icon{
+			transform: scale(1.5) rotate(360deg) translateX(-2rem);
+		}
+	}
+}
+
 
 @media (inverted-colors) {
 	img,

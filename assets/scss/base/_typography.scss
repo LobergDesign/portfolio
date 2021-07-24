@@ -1,6 +1,8 @@
 @mixin basic-font-style {
 	@include font-secondary-regular;
 	font-size: 16px;
+	color: var(--color-secondary);
+	transition: color $transition;
 }
 
 h1,
@@ -35,6 +37,7 @@ p {
 
 a {
 	@include basic-font-style;
+	text-decoration: none;
 }
 
 ul li,

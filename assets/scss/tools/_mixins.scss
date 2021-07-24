@@ -1,6 +1,6 @@
 // layout
 @mixin grid {
-	width: 98vw;
+	width: 90vw;
 	max-width: $grid-max-width;
 	margin: 0 auto;
 	@include viewport-small {

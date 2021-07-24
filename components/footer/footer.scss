@@ -1,15 +1,46 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
-@import "~/assets/scss/tools/_mixins.scss";
+// @import "~/assets/scss/tools/_mixins.scss";
 
-.circular-effect {
-	max-width: 400px;
-	max-height: 400px;
+.footer {
+	padding: 10rem 0;
+	position: relative;
+	// social
+	&__social {
+		margin-top:clamp(6rem,10.417vw,15rem);
+		svg{
+			width: 2rem;
+			height: 2rem;
+		}
+		path, rect{
+			fill:var(--color-secondary);
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+	&__social-text,
+	&__social-list {
+		display: inline-block;
+		li{
+			display: inline-block;
+		}
+		li a{
+			display: inline-block;
+			vertical-align: text-top;
+			margin: 0 .5rem;
+			transition: transform $transition;
+		}
 
+	}
+	&__social-text{
+		@include font-primary;
+		margin-right: 1rem;
+	}
 }
-text {
-	@include font-primary;
-	font-size: 10.5px;
-    letter-spacing: .8px;
-	fill: $color-main-light;
+
+// social icons hover
+.footer__social-list li:hover{
+	a{
+		transform: scale(1.5) rotate(6deg);
+	}
 }

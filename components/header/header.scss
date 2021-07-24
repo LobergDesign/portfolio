@@ -1,0 +1,32 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.header {
+	position: fixed;
+	top: 10vh;
+	left: 5vw;
+	height: 20vh;
+	width: 90vw;
+	span,
+	a {
+		@include font-primary;
+	}
+
+	svg {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 1.5rem;
+	}
+	// value one
+	span {
+		display: inline-block;
+		vertical-align: text-top;
+	}
+	// button
+
+	// main menu
+	&__menu {
+		display: none;
+	}
+}

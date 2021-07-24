@@ -44,11 +44,18 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"nuxt-purgecss",
+		"@nuxtjs/color-mode",
 		"nuxt-font-loader",
 		"@nuxt/typescript-build",
 		"nuxt-gsap-module",
 		"nuxt-graphql-request",
 	],
+
+	// Modules: https://go.nuxtjs.dev/config-modules
+	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
+	colorMode: {
+		fallback: "dark",
+	},
 	fontLoader: {
 		url: {
 			local: "/fonts/font-face.css",
@@ -56,11 +63,8 @@ export default {
 		},
 		// Enable options
 		prefetch: true,
-		preconnect: true
+		preconnect: true,
 	},
-	// Modules: https://go.nuxtjs.dev/config-modules
-	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
-
 	graphql: {
 		clients: {
 			default: {
