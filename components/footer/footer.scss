@@ -7,13 +7,14 @@
 	position: relative;
 	// social
 	&__social {
-		margin-top:clamp(6rem,10.417vw,15rem);
-		svg{
+		margin-top: clamp(6rem, 10.417vw, 15rem);
+		svg {
 			width: 2rem;
 			height: 2rem;
 		}
-		path, rect{
-			fill:var(--color-secondary);
+		path,
+		rect {
+			fill: var(--color-secondary);
 			width: 2rem;
 			height: 2rem;
 		}
@@ -21,26 +22,25 @@
 	&__social-text,
 	&__social-list {
 		display: inline-block;
-		li{
+		li {
 			display: inline-block;
 		}
-		li a{
+		li a {
 			display: inline-block;
 			vertical-align: text-top;
-			margin: 0 .5rem;
+			margin: 0 0.5rem;
 			transition: transform $transition;
 		}
-
 	}
-	&__social-text{
+	&__social-text {
 		@include font-primary;
 		margin-right: 1rem;
 	}
 }
 
 // social icons hover
-.footer__social-list li:hover{
-	a{
+.footer__social-list li:hover {
+	a {
 		transform: scale(1.5) rotate(6deg);
 	}
 }

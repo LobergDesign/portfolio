@@ -17,7 +17,12 @@ h3,
 
 h1,
 .headline-1 {
-	font-size: clamp(3.8rem, 7.292vw, 10.5rem);
+	margin-top: 0;
+	font-size: clamp(3.8rem, 8vw, 11rem);
+}
+.greeting{
+	@include font-secondary-regular;
+	font-style: italic;
 }
 
 h2,

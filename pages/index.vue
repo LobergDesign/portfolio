@@ -1,7 +1,12 @@
 <template>
-	<main class="main-grid">
-		<h1>frontpage</h1>
-		<h2>frontpage</h2>
+	<main>
+		<Hero :data="data.hero" />
+		<div class="main-grid">
+			<pre>
+			{{ data }}
+		</pre
+			>
+		</div>
 	</main>
 </template>
 

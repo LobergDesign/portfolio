@@ -3,7 +3,7 @@ import _Vue from "vue";
 declare module "@nuxt/types" {
 	export interface Context {
 		$apiResource: {
-			getData: (arg: any) => Promise<Object>;
+			getData: (arg: any) => Promise<IResponse>;
 		};
 	}
 }

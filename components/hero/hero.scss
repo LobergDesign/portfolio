@@ -1,0 +1,58 @@
+@import "~/assets/scss/settings/_vars.scss";
+// @import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	z-index: 1;
+	// text control
+	&__text {
+		@include grid;
+		padding-top: $grid-height;
+	}
+	&__text-wrap {
+		overflow: hidden;
+		height: $grid-height;
+		padding-left: 11px;
+		padding-right: 11px;
+		span {
+			transform-origin: top left;
+			display: block;
+			line-height: 1;
+			transform: translateY(110%) skew(-0.8rad);
+			transition: transform $transition--slow;
+			will-change: transform;
+		}
+		span:not(.greeting) {
+			padding-top: 1.5rem;
+		}
+
+
+		
+	}
+	@for $i from 1 through 5 {
+		&__text-wrap:nth-child(#{$i}) {
+			span{
+				transition-delay: $i * 0.05s;
+			}
+		}
+	}
+	// spinner placement
+	&__circle-effect {
+		position: absolute;
+		bottom: -10rem;
+		left: 0;
+		height: 40rem;
+		width: 40rem;
+		z-index: 1;
+	}
+}
+
+// Initial animation
+body.is-ready {
+	.hero__text-wrap span {
+		transform: translateY(0) skew(0);
+	}
+}

@@ -5,13 +5,16 @@
 @import "settings/fonts";
 @import "settings/vars";
 
-// animations
-@import "animations/init-animation";
+
 
 // tools
 @import "tools/mixins";
 @import "tools/helping-classes";
 @import "tools/spacing";
+
+// animations
+@import "animations/locomotive";
+@import "animations/init-animation";
 
 // utils
 @import "utils/icons";

@@ -4,29 +4,105 @@
 
 .header {
 	position: fixed;
-	top: 10vh;
+	top: 0;
 	left: 5vw;
-	height: 20vh;
+	height: $grid-height;
 	width: 90vw;
+	z-index: 15;
+	padding-left: 15px;
+	padding-right: 15px;
 	span,
 	a {
-		@include font-primary;
-	}
-
-	svg {
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 1.5rem;
-	}
-	// value one
-	span {
+		font-size: 1.2rem;
+		letter-spacing: 0.1rem;
 		display: inline-block;
 		vertical-align: text-top;
+		@include font-primary;
+		transition: color $transition;
+	}
+
+	// value one
+	a {
+		position: relative;
+		overflow: hidden;
+		height: 2rem;
+		width: 18rem;
+		span {
+			position: absolute;
+			left: 0;
+			will-change: transform;
+			transition: transform $transition, color $transition;
+		}
+		span:first-child {
+			transform: translateY(0.4rem) skew(0);
+		}
+		span:last-child {
+			transform: translateY(150%) skew(-0.8rad);
+		}
 	}
 	// button
+	&__menu-icon {
+		padding: 2rem;
+		span {
+			margin-left: 0.1rem;
+			border-radius: 50%;
+			height: 0.7rem;
+			width: 0.7rem;
+			background-color: var(--color-secondary);
+			transition: transform $transition;
 
-	// main menu
-	&__menu {
-		display: none;
+			&:last-child {
+				transition-delay: 0.12s;
+			}
+			&:nth-child(2) {
+				transition-delay: 0.06s;
+			}
+		}
+	}
+	// initial animations
+	.init-animation {
+		transform: scale(0);
+		transition: transform $transition--slow, opacity $transition--slow;
+	}
+}
+
+
+// Initial animation
+body.is-ready {
+	.init-animation {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@include viewport-mouse {
+	// value one
+	.header a:hover {
+		span {
+			position: absolute;
+			left: 0;
+		}
+		span:first-child {
+			transform: translateY(-120%) skew(0.8rad);
+		}
+		span:last-child {
+			transform: translateY(0) skew(0);
+		}
+	}
+	// menu icon hover
+	.header__menu-icon:hover {
+		span {
+			transform: scale(1.4);
+		}
+		span:first-child {
+			transform: scale(1.4) translateX(-0.4rem);
+		}
+		span:nth-child(2) {
+			transform: scale(1.4) translateX(-0.2rem);
+			transition-delay: 0.06s;
+		}
+		span:last-child {
+			transition-delay: 0.12s;
+		}
 	}
 }

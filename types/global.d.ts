@@ -21,8 +21,15 @@ declare interface IGsap {
 	registerPlugin: Function;
 	set: Function;
 	timeline: Function;
+	getProperty: Function;
+	fromTo: Function;
 }
-
+// response
+declare interface IResponse{
+	status: number | undefined;
+	errors: string | undefined;
+	data: Object;
+}
 // header
 declare interface IHeader{
 	mainMenuCollection: Array<IMenuItems>;

@@ -2,6 +2,7 @@
 :root {
 	--color-primary: #{$color-main-dark};
 	--color-secondary: #{$color-main-light};
+	--color-alternative: #{$color-alternative};
 }
 
 .light-mode {
@@ -23,6 +24,20 @@ body {
 	color: var(--color-secondary);
 	font-size: 1.6rem;
 	transition: background-color $transition, color $transition;
+
+	&::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--color-secondary);
+		opacity: .2;
+		border-radius: 20px;
+	}
 }
 
 // link hover effect
@@ -47,7 +62,7 @@ body {
 		position: absolute;
 		left: 0;
 		top: 50%;
-		transform: translateY(100%) skew(-.800rad);
+		transform: translateY(100%) skew(-0.8rad);
 		transition: transform $transition;
 		will-change: transform;
 	}
@@ -63,20 +78,19 @@ body {
 	}
 }
 
-@include viewport-mouse{
-	.cta:hover{
-		.cta__text{
-			transform: translateY(-22rem) skew(.800rad);
+@include viewport-mouse {
+	.cta:hover {
+		.cta__text {
+			transform: translateY(-22rem) skew(0.8rad);
 		}
-		.cta__reveal{
+		.cta__reveal {
 			transform: translateY(-60%) skew(0);
 		}
-		.cta__icon{
+		.cta__icon {
 			transform: scale(1.5) rotate(360deg) translateX(-2rem);
 		}
 	}
 }
-
 
 @media (inverted-colors) {
 	img,
