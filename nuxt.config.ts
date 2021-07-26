@@ -45,6 +45,7 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"nuxt-purgecss",
+		"@nuxt/image",
 		"@nuxtjs/color-mode",
 		"nuxt-font-loader",
 		"@nuxt/typescript-build",
@@ -56,6 +57,11 @@ export default {
 	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
 	colorMode: {
 		fallback: "dark",
+	},
+	image: {
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/lobergdesign/image/fetch/f_auto,c_scale,w_auto/",
+		},
 	},
 	fontLoader: {
 		url: {

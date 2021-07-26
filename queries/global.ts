@@ -16,5 +16,11 @@ const query = `query globalSettingsEntryQuery {
       linkedIn
       facebook
     }
+    workItemCollection(limit: 10) {
+      items {
+        slug
+        model:__typename
+      }
+    }
   }`;
 export { query };

@@ -1,0 +1,25 @@
+<template>
+	<div class="text-block main-grid">
+		<div class="container">
+			<div class="row flex-center-center">
+				<div class="col-lg-5">
+					<h3>{{ data.intro }}</h3>
+				</div>
+			</div>
+			<div class="row flex-center-center">
+				<div class="col-lg-5" v-if="data.firstRteSection">
+					<div v-html="toHtmlString(data.firstRteSection.json)"></div>
+				</div>
+				<div class="col-lg-5" v-if="data.secondRteSection">
+					<div v-html="toHtmlString(data.secondRteSection.json)"></div>
+				</div>
+			</div>
+			<div class="row flex-center-center" v-if="data.link">
+				<div class="col-lg-5">
+					<UtilsBtn :slug="data.link.slug" :text="data.linkTextOverwrite" />
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<script lang="ts" src="./textBlock.ts"></script>

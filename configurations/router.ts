@@ -14,9 +14,10 @@ const siteStructure = async () => {
 	});
 	const data = await graphQLClient.request(query, isPreview);
 	const menuItems = data.globalSettings.mainMenuCollection.items;
-
+	const workItems = data.workItemCollection.items;
 	return {
 		menuItems,
+		workItems,
 	};
 };
 
@@ -25,17 +26,21 @@ export async function extendRoutes(resolve: (...param: string[]) => Vue) {
 	const sitemapRoutes: IRouteItems[] = [];
 
 	site.menuItems.forEach((route: IMenuItems) => {
-		if (route.slug !== null) {
-			sitemapRoutes.push({
-				path: `/${route.slug}/`,
-				component: resolve(`~/pages/${route.model}/index.vue`),
-			});
-		}else{
-            sitemapRoutes.push({
-				path: "/",
-				component: resolve(`~/pages/index.vue`),
-			});
-        }
+		sitemapRoutes.push({
+			path: `/${route.slug}/`,
+			component: resolve(`~/pages/${route.model}/index.vue`),
+		});
+	});
+	site.workItems.forEach((route: IMenuItems) => {
+		sitemapRoutes.push({
+			path: `/work/${route.slug}/`,
+			component: resolve(`~/pages/${route.model}/index.vue`),
+		});
+	});
+
+	sitemapRoutes.push({
+		path: "/",
+		component: resolve(`~/pages/index.vue`),
 	});
 	return [...sitemapRoutes];
 }
@@ -51,6 +56,13 @@ export async function generate() {
 			});
 		}
 	});
+	site.workItems.forEach((item: IMenuItems) => {
+		if (item.slug !== null) {
+			routes.push({
+				route: `/work/${item.slug}/`,
+			});
+		}
+	});
 
-	return routes;
+	return [...routes];
 }

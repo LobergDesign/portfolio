@@ -1,32 +1,34 @@
 <template>
 	<div>
 		<header class="header flex-vertical-center" :class="{ 'is-active': isMenuActive }">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4 flex-vertical-center">
-						<div class="init-animation">
-							<nuxt-link to="/">
+			<div class="main-grid">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4 flex-vertical-center">
+							<div class="init-animation">
+								<nuxt-link to="/">
+									<span>
+										{{ data.headerValueOne }}
+									</span>
+									<span> Home </span>
+								</nuxt-link>
+							</div>
+						</div>
+						<div class="col-sm-4 flex-center-center">
+							<div class="init-animation">
 								<span>
-									{{ data.headerValueOne }}
+									{{ data.headerValueTwo }}
 								</span>
-								<span> Home </span>
-							</nuxt-link>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4 flex-center-center">
-						<div class="init-animation">
-							<span>
-								{{ data.headerValueTwo }}
-							</span>
-						</div>
-					</div>
-					<div class="col-sm-4 flex-end">
-						<div class="init-animation">
-							<button type="button" class="header__menu-icon" v-on:click="toggleMenu()">
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
+						<div class="col-sm-4 flex-end">
+							<div class="init-animation">
+								<button type="button" class="header__menu-icon" v-on:click="toggleMenu()">
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -48,7 +50,7 @@
 						<template v-else>
 							<span>{{ item.slug }}</span>
 						</template>
-					<IconArrow class="header-menu__list-icon icon-arrow icon-arrow--medium" />
+						<IconArrow class="header-menu__list-icon icon-arrow icon-arrow--medium" />
 					</nuxt-link>
 				</li>
 			</ul>

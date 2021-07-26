@@ -39,7 +39,9 @@ body {
 		border-radius: 20px;
 	}
 }
-
+.app{
+	overflow: hidden;
+}
 // link hover effect
 .cta {
 	position: relative;
@@ -77,11 +79,15 @@ body {
 		transition: transform $transition;
 	}
 }
-
+img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 @include viewport-mouse {
 	.cta:hover {
 		.cta__text {
-			transform: translateY(-22rem) skew(0.8rad);
+			transform: translateY(-28rem) skew(0.8rad);
 		}
 		.cta__reveal {
 			transform: translateY(-60%) skew(0);

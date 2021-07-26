@@ -1,0 +1,46 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+$btn-size: 1.2rem;
+.btn {
+	position: relative;
+	display: inline-block;
+	margin: 3rem 0;
+	padding: 1rem 0;
+	@include font-primary;
+	font-size: 12px;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: .2rem;
+		left: 0;
+		height: 0.1rem;
+		width: 100%;
+		background-color:  var(--color-secondary);
+	}
+	// icon
+	svg {
+		transform-origin: center center;
+		vertical-align: text-top;
+		margin-left: 3rem;
+		height: $btn-size;
+		width: $btn-size;
+		fill: var(--color-secondary);
+		transition: transform $transition--fast;
+	}
+	// text
+	span{
+		transform-origin: left center;
+		display: inline-block;
+	}
+}
+
+// hover
+@include viewport-mouse{
+	.btn:hover{
+		 svg{
+			transform: scale(1.3) rotate(360deg);
+		}
+	}
+}
