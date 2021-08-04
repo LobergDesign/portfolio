@@ -1,13 +1,13 @@
 <template>
-	<section class="work main-grid">
+	<section class="main-grid main-grid__indent">
 		<div class="container">
 			<ul class="row row-ul work__list">
 				<li v-for="(item, index) in privateWorkUC.items" :key="index" class="col work__list-item">
 					<nuxt-link :to="'/work/' + item.slug + '/'">
-							<h4 v-if="item.pageTitle">
+						<h4 v-if="item.pageTitle">
 							{{ item.pageTitle }}
 						</h4>
-					<div class="work__list-item-image" v-if="item.previewImage">
+						<div class="work__list-item-image" v-if="item.previewImage">
 							<NuxtImg provider="cloudinary" :src="item.previewImage[0].url" />
 						</div>
 						<!-- <div class="work__list-item-body">

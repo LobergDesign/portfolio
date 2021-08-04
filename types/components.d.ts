@@ -16,10 +16,20 @@ declare namespace Components {
 		linkTextOverwrite: string;
 		link: Object;
 	}
+
 	export interface ICta{
 		type: string;
 		title: Array<string>;
 		rotateEffectText: string;
+	}
+
+	export interface ITableList{
+		items: Array<ITableListItem>;
+	}
+	export interface ITableListItem{
+		year: string;
+		place:string;
+		description: string;
 	}
 	export interface IContentArea{
 		contentBlocksArea: Array<ITextArea | ICta>;

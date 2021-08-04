@@ -1,0 +1,16 @@
+@import "~/assets/scss/settings/_vars.scss";
+
+.table-list-block {
+	// headline
+	&__headlines {
+		padding-bottom: 0.5rem;
+	}
+	// border controle
+	&__item:first-child .table-list-block__content {
+		border-top: 1px solid var(--color-secondary);
+	}
+	&__item .table-list-block__content {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--color-secondary);
+	}
+}

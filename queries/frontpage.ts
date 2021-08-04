@@ -10,6 +10,9 @@ const query = `query contentPageEntryQuery {
     contentArea {
       ...contentArea
     }
+    secondContentArea {
+      ...contentArea
+    }
     privateWorkUC: privateWorkUnderConstructionCollection(limit: 5) {
       ...privateWorkUnderConstruction
     }
