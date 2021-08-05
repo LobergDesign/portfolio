@@ -31,6 +31,16 @@ declare namespace Components {
 		place:string;
 		description: string;
 	}
+
+
+	export interface IColumnList{
+		items: Array<IColumnListItem>;
+	}
+	export interface IColumnListItem{
+		title: string;
+		listItems:Array<any>;
+	}
+
 	export interface IContentArea{
 		contentBlocksArea: Array<ITextArea | ICta>;
 	}

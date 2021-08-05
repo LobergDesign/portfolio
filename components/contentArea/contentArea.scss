@@ -1,10 +1,6 @@
-// @import "~/assets/scss/settings/_vars.scss";
-// @import "~/assets/scss/settings/_fonts.scss";
-// @import "~/assets/scss/tools/_mixins.scss";
-
 .content-area {
-	margin: clamp(10rem, 13.889vw, 20rem) 0 0;
+	margin-top: clamp(10rem, 13.889vw, 20rem);
 	&__item{
-		margin-bottom: clamp(6rem, 10.417vw, 15rem);
+		margin-bottom: clamp(6rem, 13.889vw, 20rem);
 	}
 }

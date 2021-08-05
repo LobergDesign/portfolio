@@ -2,6 +2,9 @@
 	<div class="main-grid main-grid__indent">
 		<div class="table-list-block">
 			<div class="container">
+				<h3>
+					{{data.sectionTitle}}
+				</h3>
 				<ul class="row row-ul">
 					<li
 						v-for="(headlines, headlinesIndex) in data.tabelHeadlines"

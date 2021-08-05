@@ -47,10 +47,9 @@ h3,
 h4,
 .headline-4 {
 	text-align: left;
-	font-size: clamp(1.8rem, 1.528vw, 1.6rem);
-
+	font-size: clamp(1.4rem, 1.528vw, 1.6rem);
 	@include font-primary;
-	line-height: 1.3;
+	line-height: 1.6;
 	letter-spacing: 0.1rem;
 	margin-bottom: .5rem;
 }
@@ -60,7 +59,7 @@ p {
 	margin-bottom: 3rem;
 }
 .text-faint {
-	font-size: clamp(1.2rem, 0.7vw, 1.2rem);
+	font-size: clamp(1.2rem, 0.9vw, 1.3rem);
 	@include font-primary;
 	opacity: 0.4;
 	letter-spacing: 0.15rem;

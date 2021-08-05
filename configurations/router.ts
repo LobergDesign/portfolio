@@ -36,6 +36,7 @@ export async function extendRoutes(resolve: (...param: string[]) => Vue) {
 		sitemapRoutes.push({
 			path: `/work/${route.slug}/`,
 			component: resolve(`~/pages/${route.model}/index.vue`),
+			name: route.slug,
 		});
 	});
 

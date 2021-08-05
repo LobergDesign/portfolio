@@ -1,5 +1,5 @@
 const contentAreaFragment = `fragment contentArea on ComponentContentarea {
-  contentBlocksCollection(limit: 5) {
+  contentBlocksCollection(limit: 10) {
     items {
       type: __typename
       ... on ComponentTextarea {
@@ -22,6 +22,7 @@ const contentAreaFragment = `fragment contentArea on ComponentContentarea {
         rotateEffectText
       }
       ... on ComponentTabelList {
+        sectionTitle: title
         tabelHeadlines
         tabelItemsCollection(limit: 15) {
           items {
@@ -30,6 +31,18 @@ const contentAreaFragment = `fragment contentArea on ComponentContentarea {
             description
           }
         }
+      }
+      ... on ComponentColumnList {
+        listItemsCollection {
+          items {
+            title
+            listItems
+          }
+        }
+      }
+      ... on ComponentImage {
+        imageTitle: title
+        image
       }
     }
   }
