@@ -2,11 +2,11 @@
 	<div class="text-block main-grid">
 		<div class="container">
 			<div class="row flex-center-center">
-				<div class="col-lg-5">
-					<h3>{{ data.intro }}</h3>
+				<div class="col-xl-5 col-lg-8">
+					<h3 class="intro">{{ data.intro }}</h3>
 				</div>
 			</div>
-			<div class="row flex-center-center">
+			<div class="row flex-horizontal-center">
 				<div class="col-lg-5" v-if="data.firstRteSection">
 					<div v-html="toHtmlString(data.firstRteSection.json)"></div>
 				</div>

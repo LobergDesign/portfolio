@@ -1,17 +1,17 @@
 <template>
 	<main>
-		<Hero :data="data.hero" />
-		<ContentArea :data="data.contentArea" />
-		<PrivateWork :privateWorkUC="data.privateWorkUC" :privateWork="data.privateWork" />
+		<!-- hero -->
+		<Hero v-if="data.hero" :data="data.hero" />
+		<!-- content area -->
+		<ContentArea v-if="data.contentArea" :data="data.contentArea" />
+		<!-- private work -->
+		<PrivateWork
+			v-if="data.privateWork && data.privateWorkUC"
+			:privateWorkUC="data.privateWorkUC"
+			:privateWork="data.privateWork"
+		/>
 		<!-- second content area -->
-		<ContentArea :data="data.secondContentArea" />
-		<div class="main-grid">
-
-			<pre>
-			{{ data }}
-		</pre
-			>
-		</div>
+		<ContentArea v-if="data.secondContentArea" :data="data.secondContentArea" />
 	</main>
 </template>
 

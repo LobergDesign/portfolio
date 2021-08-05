@@ -3,14 +3,22 @@
 		<div class="table-list-block">
 			<div class="container">
 				<ul class="row row-ul">
-					<li v-for="(headlines, headlinesIndex) in data.tabelHeadlines" class="col-4 table-list-block__headlines" :key="headlinesIndex">
+					<li
+						v-for="(headlines, headlinesIndex) in data.tabelHeadlines"
+						class="col-4 table-list-block__headlines"
+						:key="headlinesIndex"
+					>
 						<span class="text-faint">
 							{{ headlines }}
 						</span>
 					</li>
 				</ul>
 				<ul class="row row-ul">
-					<li v-for="(item, index) in data.tabelItemsCollection.items" class="col-12 table-list-block__item" :key="index">
+					<li
+						v-for="(item, index) in data.tabelItemsCollection.items"
+						class="col-12 table-list-block__item"
+						:key="index"
+					>
 						<div class="table-list-block__content">
 							<div class="row">
 								<div class="col-sm-4">{{ item.year }}</div>
@@ -21,11 +29,6 @@
 					</li>
 				</ul>
 			</div>
-
-			<pre>
-			{{ data }}
-		</pre
-			>
 		</div>
 	</div>
 </template>

@@ -19,11 +19,10 @@
 		display: inline-block;
 	}
 }
-body.is-ready{
+body.is-ready {
 	.app-init-effect {
-	
 		&__counter {
-		pointer-events: none;
+			pointer-events: none;
 		}
 	}
 }

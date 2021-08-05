@@ -16,7 +16,7 @@
 						<IconArrow />
 					</nuxt-link>
 				</li>
-				<li v-for="(item, i) in privateWork.items" :key="i" class="col work__list-item">
+				<li v-for="(item, i) in privateWork.items" :key="'index' + i" class="col work__list-item">
 					<nuxt-link :to="'/work/' + item.slug + '/'">
 						<h4 v-if="item.pageTitle">
 							{{ item.pageTitle }}

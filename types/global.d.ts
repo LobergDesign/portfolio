@@ -1,5 +1,3 @@
-
-
 declare module "*.svg?inline" {
 	import Vue from "vue";
 	export default Vue;
@@ -18,6 +16,7 @@ declare interface IRouteItems {
 	path?: string;
 	component?: Vue;
 	route?: string;
+	name?:string;
 }
 
 // GSAP

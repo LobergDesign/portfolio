@@ -1,6 +1,10 @@
 <template>
-	<h1>Contentpage</h1>
+	<main>
+		<!-- hero -->
+		<Hero v-if="data.items[0].hero" :data="data.items[0].hero" />
+		<!-- content area -->
+		<ContentArea v-if="data.items[0].contentArea" :data="data.items[0].contentArea" />
+	</main>
 </template>
-<!--
-<script lang="ts" src="./_slug.ts"></script>
--->
+
+<script lang="ts" src="./index.ts"></script>
