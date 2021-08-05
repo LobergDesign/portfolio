@@ -1,14 +1,20 @@
 // basic colors
 $color-black: #000;
 $color-white: #fff;
+$color-main-dark: #171717;
+// $color-main-light: #E3E3E1;
+$color-main-light: #e3e3e1;
+$color-alternative: #1F4A40;
+// $color-alternative: #E3E3E1;
 
+// Layout elements
+$grid-height: 16.66vh;
 
 // transitions
-$transition--cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$transition--cubic: cubic-bezier(0.4, 0, 0, 1);
 $transition: 0.5s $transition--cubic;
 $transition--slow: 0.7s $transition--cubic;
-$transition--fast: 0.3s $transition--cubic;
-$transition--extra-fast: 0.2s $transition--cubic;
+$transition--fast: 0.4s $transition--cubic;
 
 //------- Media queries -------//
 $viewport-extra-small: 350px; // 350px
@@ -25,7 +31,6 @@ $spacing-vertical-m: 4.286vw;
 $spacing-vertical-s: 2.143vw;
 
 // layout - grid
-$grid-max-width: 1280px;
+$grid-max-width: 1680px;
 $grid-max-content-width: 1615px;
 $grid-min-width: 370px;
-

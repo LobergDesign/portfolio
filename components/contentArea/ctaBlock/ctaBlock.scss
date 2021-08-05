@@ -1,0 +1,12 @@
+@import "~/assets/scss/settings/_vars.scss";
+
+.cta-block {
+	transform:translateY(-$grid-height);
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-top: $grid-height;
+	&__title {
+		height: $grid-height;
+	}
+}

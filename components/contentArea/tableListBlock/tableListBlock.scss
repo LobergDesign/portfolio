@@ -1,0 +1,31 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+
+$inner-spacing: 1.4rem;
+.table-list-block {
+	// headline
+	&__headlines {
+		padding-bottom: 0.5rem;
+	}
+	// border controle
+	&__item{
+		position: relative;
+		padding-top: $inner-spacing;
+		padding-bottom: $inner-spacing;
+		@include font-primary;
+		font-size: 1.2rem;
+	}
+	&__item:after, &__item:before{
+		content: "";
+		position: absolute;
+		left: 8px;
+		right: 8px;
+		bottom: 0;
+		background-color: var(--color-secondary);
+		height: .1rem;
+		opacity: 0.4;
+	}
+	&__item:first-child:before{
+		top: 0;
+	}
+}

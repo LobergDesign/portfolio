@@ -1,6 +1,9 @@
 // main grid wrap
 .main-grid {
 	@include grid;
+	&__indent{
+		max-width: 1100px;
+	}
 }
 
 .container {

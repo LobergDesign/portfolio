@@ -1,3 +1,4 @@
+import { extendRoutes, generate } from "./configurations/router";
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
 	target: "static",
@@ -19,15 +20,23 @@ export default {
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: ["@/assets/scss/styles.scss"],
+	router: {
+		trailingSlash: true,
+		linkActiveClass: "is-active",
+		extendRoutes: async (routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
+	},
 	generate: {
 		fallback: true,
 		// exclude pages thats unused
 		// eg. [/about/, /news/]
-		exclude: [],
+		exclude: [/ContentPage/],
+		crawler: false,
+		routes: async () => await generate(),
 	},
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	// plugins: ["~/plugins/cms", { src: "~/plugins/locomotive.js", ssr: false }],
+	plugins: ["~/plugins/cms"],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: [{ path: "~/components", extensions: ["vue"] }],
@@ -36,6 +45,9 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"nuxt-purgecss",
+		"@nuxt/image",
+		"@nuxtjs/color-mode",
+		"nuxt-font-loader",
 		"@nuxt/typescript-build",
 		"nuxt-gsap-module",
 		"nuxt-graphql-request",
@@ -43,7 +55,23 @@ export default {
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: ["@nuxtjs/sitemap", "@nuxtjs/robots", "@nuxtjs/svg"],
-
+	colorMode: {
+		fallback: "dark",
+	},
+	image: {
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/lobergdesign/image/fetch/f_auto,c_scale,w_auto/",
+		},
+	},
+	fontLoader: {
+		url: {
+			local: "/fonts/font-face.css",
+			google: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap",
+		},
+		// Enable options
+		prefetch: true,
+		preconnect: true,
+	},
 	graphql: {
 		clients: {
 			default: {

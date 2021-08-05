@@ -1,0 +1,26 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+// @import "~/assets/scss/tools/_mixins.scss";
+
+.circular-effect {
+	transform: scale(0);
+	max-width: 400px;
+	max-height: 400px;
+	transition: transform $transition--slow;
+}
+text {
+	@include font-primary;
+	font-size: 10.5px;
+	letter-spacing: 0.2rem;
+	fill: var(--color-secondary);
+	transition: fill $transition;
+}
+
+
+// Initial animation
+body.is-ready {
+	.circular-effect {
+		transition-delay: .15s;
+		transform: scale(1);
+	}
+}
