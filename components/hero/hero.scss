@@ -9,13 +9,14 @@
 	z-index: 1;
 	// text control
 	&__text {
+		transform-origin: center center;
 		@include grid;
 		padding-top: $grid-height;
 	}
 	// has number
 	&__text.has-number {
 		font-size: clamp(3.8rem, 6vw, 10rem);
-		.flex-end{
+		.flex-end {
 			justify-content: flex-start;
 		}
 	}
@@ -52,9 +53,9 @@
 		bottom: -24%;
 		left: -20%;
 		line-height: 0.9;
-		transform: scale(.5);
+		transform: scale(0.5);
 		opacity: 0;
-		transition: transform $transition--slow,opacity $transition--slow;
+		transition: transform $transition--slow, opacity $transition--slow;
 	}
 	// info section
 	// &__info-section {
@@ -86,8 +87,8 @@ body.is-ready {
 	.hero__text-wrap span {
 		transform: translateY(0) skew(0);
 	}
-	.hero__number{
-		transition-delay: .2s;
+	.hero__number {
+		transition-delay: 0.2s;
 		transform: scale(1);
 		opacity: 1;
 	}

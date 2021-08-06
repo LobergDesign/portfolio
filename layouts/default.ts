@@ -6,13 +6,13 @@ import { query } from "~/queries/global";
 export default class Default extends Vue {
 	public header: IHeader | {} = {};
 	public footer: IFooter | {} = {};
-
 	// gsap injection instance
 	private $gsap!: IGsap;
 
 	private gsapEeasing: string = "power1.out";
 	// main gsap handler
 	private gsapOnLoadHandler() {
+		window.scrollTo(0, 0);
 		document.body.style.overflow = "hidden";
 		const someFunction = () => {
 			tl.to("#counter, #percent", {
@@ -39,17 +39,25 @@ export default class Default extends Vue {
 			});
 		};
 		const lines = () => {
+			const target = ".lines-effect";
 			this.$gsap.fromTo(
-				".lines-effect",
+				target,
 				{ xPercent: -100 },
 				{ xPercent: 0, duration: 2, stagger: 0.1, ease: this.gsapEeasing }
 			);
+
+			this.$gsap.to(target, {
+				y: -200,
+				opacity: 0,
+				ease: "power3",
+				scrollTrigger: {
+					scrub: true,
+				},
+			});
 		};
 
 		return { counter, lines };
 	}
-
-	
 
 	// initial state
 	public customBeforeAppear() {

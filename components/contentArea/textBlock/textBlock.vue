@@ -1,5 +1,5 @@
 <template>
-	<div class="text-block main-grid">
+	<div class="text-block main-grid set-animation">
 		<div class="container">
 			<div class="row flex-center-center">
 				<div class="col-xl-5 col-lg-8">

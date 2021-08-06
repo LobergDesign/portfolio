@@ -40,18 +40,18 @@ export default class Footer extends Vue {
 				// mousewheel up
 				if (direction == -1) {
 					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
+						this.$gsap.to(headerItem, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
 					}
 				}
 				// mousewheel down
 				if (direction === 1) {
 					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { opacity: 0, y: -60, duration: 0.9, ease: "power2.out" });
+						this.$gsap.to(headerItem, { opacity: 0, y: -60, duration: 0.7, ease: "power2.out" });
 					}
 				}
 			},
 		});
-	
+
 		initScrolltrigger.enable();
 	}
 
@@ -59,9 +59,17 @@ export default class Footer extends Vue {
 	@Watch("$route")
 	public routeChange() {
 		// window.removeEventListener("scroll", this.setHeaderBg);
+		const isReadyClass = "is-ready";
+		const body = document.body;
+		if (body.classList.contains(isReadyClass)) {
+			body.classList.remove(isReadyClass);
+		}
 		this.$nextTick(() => {
 			// close menu on route change
 			this.isMenuActive && (this.isMenuActive = !this.isMenuActive);
+			setTimeout(() => {
+				body.classList.add(isReadyClass);
+			}, 500);
 		});
 	}
 

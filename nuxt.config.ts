@@ -130,6 +130,7 @@ export default {
 			/g/,
 			/path/,
 			/rect/,
+			/fade-out/,
 		],
 	},
 	loaders: {

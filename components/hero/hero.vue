@@ -1,6 +1,6 @@
 <template>
 	<section class="hero">
-		<h1 class="hero__text" :class="{ 'has-number': number }">
+		<h1 class="hero__text fade-out" :class="{ 'has-number': number }">
 			<span class="hero__text-wrap flex-vertical-center">
 				<span class="greeting"  v-if="data.greetingText">{{ data.greetingText }}</span>
 			</span>
@@ -22,7 +22,7 @@
 		</h1>
 		<span class="hero__number" v-if="number"> 0{{ number }} </span>
 
-		<div class="hero__circle-effect" data-scroll-animation v-if="data.rotateEffectText" :class="{ 'has-number': number }">
+		<div class="hero__circle-effect" data-scale-down v-if="data.rotateEffectText" :class="{ 'has-number': number }">
 			<CircleEffect :text="data.rotateEffectText" />
 		</div>
 	</section>

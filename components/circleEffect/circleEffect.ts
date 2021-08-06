@@ -9,7 +9,18 @@ export default class CircleEffect extends Vue {
 
 	private $gsap!: IGsap;
 
-	mounted() {
+
+	private scaleOnScroll(){
+		const target = "[data-scale-down]";
+		this.$gsap.to(target, {
+            scale: 0,
+			ease: "power2",
+			scrollTrigger: {
+				scrub: true,
+			},
+		});
+	}
+	private rotate(){
 		const tl = this.$gsap.timeline();
 		tl.to("#circle", {
 			duration: "6",
@@ -18,5 +29,10 @@ export default class CircleEffect extends Vue {
 			transformOrigin: "center center",
 			repeat: -1,
 		});
+	}
+
+	mounted() {
+		this.rotate();
+		this.scaleOnScroll();
 	}
 }

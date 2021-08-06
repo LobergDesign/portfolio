@@ -29,6 +29,7 @@ declare interface IGsap {
 	getProperty: Function;
 	fromTo: Function;
 	utils: any;
+	quickSetter: Function;
 }
 declare interface IScrollTrigger {
 	create: Function;
