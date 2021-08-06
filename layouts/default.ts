@@ -1,5 +1,5 @@
 import { Context } from "@nuxt/types";
-import { Vue, Component } from "nuxt-property-decorator";
+import { Vue, Component, Watch } from "nuxt-property-decorator";
 import { query } from "~/queries/global";
 
 @Component
@@ -49,6 +49,8 @@ export default class Default extends Vue {
 		return { counter, lines };
 	}
 
+	
+
 	// initial state
 	public customBeforeAppear() {
 		this.gsapOnLoadHandler().counter();
@@ -58,7 +60,6 @@ export default class Default extends Vue {
 	mounted() {
 		window.scrollTo(0, 0);
 	}
-
 	async fetch() {
 		const nuxtContext: Context = this.$nuxt.context;
 		const response = (await nuxtContext.$apiResource.getData(query)) as any;

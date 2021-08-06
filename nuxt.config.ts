@@ -58,6 +58,11 @@ export default {
 	colorMode: {
 		fallback: "dark",
 	},
+	gsap: {
+		extraPlugins: {
+			scrollTrigger: true,
+		},
+	},
 	image: {
 		cloudinary: {
 			baseURL: "https://res.cloudinary.com/lobergdesign/image/fetch/f_auto,c_scale,w_auto/",
@@ -124,6 +129,7 @@ export default {
 			/svg/,
 			/g/,
 			/path/,
+			/rect/,
 		],
 	},
 	loaders: {

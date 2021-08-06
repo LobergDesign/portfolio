@@ -1,22 +1,22 @@
 <template>
 	<div>
-		<header class="header flex-vertical-center" :class="{ 'is-active': isMenuActive }">
+		<header class="header flex-vertical-center" ref="header" :class="{ 'is-active': isMenuActive }">
 			<div class="main-grid">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-4 flex-vertical-center">
 							<div class="init-animation">
-								<nuxt-link to="/">
+								<nuxt-link to="/" hide-on-scroll>
 									<span>
 										{{ data.headerValueOne }}
 									</span>
-									<span> Home </span>
+									<span>Home</span>
 								</nuxt-link>
 							</div>
 						</div>
 						<div class="col-sm-4 flex-center-center">
 							<div class="init-animation">
-								<span>
+								<span hide-on-scroll>
 									{{ data.headerValueTwo }}
 								</span>
 							</div>
@@ -43,12 +43,14 @@
 			<div class="header-menu__bg"></div>
 			<ul class="header-menu__list">
 				<li v-for="(item, index) in data.mainMenuCollection.items" class="flex-center-center" :key="index">
-					<nuxt-link :to="item.slug ? item.slug : '/'">
+					<nuxt-link :to="item.slug ? '/' + item.slug + '/' : '/'" class=" main-grid">
 						<template v-if="item.menuName">
-							<span>{{ item.menuName }} </span>
+							<span class="header-menu__list-text">{{ item.menuName }} </span>
+							<span class="header-menu__list-reveal">{{ item.menuName }} </span>
 						</template>
 						<template v-else>
-							<span>{{ item.slug }}</span>
+							<span class="header-menu__list-text">{{ item.slug }}</span>
+							<span class="header-menu__list-reveal">{{ item.slug }}</span>
 						</template>
 						<IconArrow class="header-menu__list-icon icon-arrow icon-arrow--medium" />
 					</nuxt-link>

@@ -49,6 +49,7 @@
 			text-align: center;
 		}
 		li a {
+			height: 100%;
 			transform-origin: top left;
 			padding-top: 1.5rem;
 			display: block;
@@ -62,18 +63,41 @@
 			transition-delay: 0s;
 		}
 	}
+	// hover effect
+	&__list-text, &__list-reveal {
+		position: absolute;
+		left: 50%;
+		top:50%;
+		transform: translateY(-45%) translateX(-50%);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	&__list-reveal {
+		@include font-secondary-regular;
+		font-size: clamp(3.8rem, 10vw, 13rem);
+		transform: translateY(100%) skew(-0.8rad)  translateX(-50%);
+	}
 	// icon
 	&__list-icon {
-		margin-left: 10rem;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform-origin: top center;
+		transform: scale(1) rotate(0deg) translateY(-50%);
 		transition: transform $transition;
 	}
 }
 // hover
 @include viewport-mouse {
 	.header-menu.is-active .header-menu__list li:hover {
-		
 		.header-menu__list-icon {
-			transform: scale(1.2) rotate(360deg) translateX(-2rem);
+			transform: scale(1.2) rotate(360deg) translateY(-50%);
+		}
+		.header-menu__list-text{
+			transform: translateY(-200%) skew(0.8rad) translateX(-50%);
+		}
+		.header-menu__list-reveal{
+			transform: translateY(-55%) skew(0) translateX(-50%);
 		}
 	}
 }

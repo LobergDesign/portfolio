@@ -2,6 +2,7 @@ declare module "*.svg?inline" {
 	import Vue from "vue";
 	export default Vue;
 }
+
 declare module "@contentful/rich-text-html-renderer" {
 	import Vue from "vue";
 	export default Vue;
@@ -16,7 +17,7 @@ declare interface IRouteItems {
 	path?: string;
 	component?: Vue;
 	route?: string;
-	name?:string;
+	name?: string;
 }
 
 // GSAP
@@ -27,6 +28,11 @@ declare interface IGsap {
 	timeline: Function;
 	getProperty: Function;
 	fromTo: Function;
+	utils: any;
+}
+declare interface IScrollTrigger {
+	create: Function;
+
 }
 // response
 declare interface IResponse {
