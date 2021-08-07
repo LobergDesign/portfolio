@@ -1,44 +1,14 @@
-// @font-face {
-// 	font-family: nnnouvelle-grotesk-normal;
-// 	font-style: normal;
-// 	font-weight: 500;
-// 	font-display: swap;
-// 	src:
-// 		url("~assets/fonts/NNNouvelleGrotesk-Normal.woff2") format("woff2"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Normal.woff") format("woff"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Normal.otf") format("truetype");
-// }
 
-// @font-face {
-// 	font-family: nnnouvelle-grotesk-bold;
-// 	font-style: normal;
-// 	font-weight: 700;
-// 	font-display: swap;
-// 	src:
-// 		url("~assets/fonts/NNNouvelleGrotesk-Bold.woff2") format("woff2"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Bold.woff") format("woff"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Bold.otf") format("truetype");
-// }
-
-// @font-face {
-// 	font-family: nnnouvelle-grotesk-black;
-// 	font-style: normal;
-// 	font-weight: 700;
-// 	font-display: swap;
-// 	src:
-// 		url("~assets/fonts/NNNouvelleGrotesk-Black.woff2") format("woff2"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Black.woff") format("woff"),
-// 		url("~assets/fonts/NNNouvelleGrotesk-Black.otf") format("truetype");
-// }
-
-// @mixin font-primary {
-// 	font-family: nnnouvelle-grotesk-normal, sans-serif;
-// }
-
-// @mixin font-primary-bold {
-// 	font-family: nnnouvelle-grotesk-bold, sans-serif;
-// }
-
-// @mixin font-primary-black {
-// 	font-family: nnnouvelle-grotesk-black, sans-serif;
-// }
+@mixin font-primary{
+    font-family: "Monument Extended", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin font-secondary-regular{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+}
+@mixin font-secondary-bold{
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+}

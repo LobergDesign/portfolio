@@ -1,0 +1,95 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	z-index: 1;
+	// text control
+	&__text {
+		transform-origin: center center;
+		@include grid;
+		padding-top: $grid-height;
+	}
+	// has number
+	&__text.has-number {
+		font-size: clamp(3.8rem, 6vw, 10rem);
+		.flex-end {
+			justify-content: flex-start;
+		}
+	}
+	&__text-wrap {
+		position: relative;
+		overflow: hidden;
+		height: $grid-height;
+		padding-left: 11px;
+		padding-right: 11px;
+		span {
+			transform-origin: top left;
+			display: block;
+			line-height: 1;
+			transform: translateY(150%) skew(-0.8rad);
+			transition: transform $transition--slow;
+			will-change: transform;
+		}
+		span:not(.greeting) {
+			padding-top: 1.5rem;
+		}
+	}
+	@for $i from 1 through 5 {
+		&__text-wrap:nth-child(#{$i}) {
+			span {
+				transition-delay: $i * 0.05s;
+			}
+		}
+	}
+	// number
+	&__number {
+		@include font-primary;
+		font-size: clamp(3.8rem, 52vw, 70rem);
+		position: absolute;
+		bottom: -24%;
+		left: -20%;
+		line-height: 0.9;
+		transform: scale(0.5);
+		opacity: 0;
+		transition: transform $transition--slow, opacity $transition--slow;
+	}
+	// info section
+	// &__info-section {
+	// 	position: absolute;
+	// 	right: 20vw;
+	// 	text-align: right;
+	// 	p{
+	// 		margin: 0;
+	// 	}
+	// }
+	// spinner placement
+	&__circle-effect {
+		position: absolute;
+		bottom: -10rem;
+		left: 0;
+		height: 40rem;
+		width: 40rem;
+		z-index: 1;
+	}
+	// has nuimber
+	&__circle-effect.has-number {
+		left: auto;
+		right: 0;
+	}
+}
+
+// Initial animation
+body.is-ready {
+	.hero__text-wrap span {
+		transform: translateY(0) skew(0);
+	}
+	.hero__number {
+		transition-delay: 0.2s;
+		transform: scale(1);
+		opacity: 1;
+	}
+}

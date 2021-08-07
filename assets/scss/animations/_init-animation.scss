@@ -1,1 +1,49 @@
+.app-init-effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	&__counter {
+		position: fixed;
+		bottom: -10rem;
+		right: -5rem;
+		@include font-primary;
+		font-size: clamp(3.8rem, 13.889vw, 20rem);
+		z-index: 5;
+	}
+	&__counter-number {
+		display: inline-block;
+		transform: translateX(clamp(3.8rem, 4.167vw, 6rem));
+	}
+	&__counter-percent {
+		display: inline-block;
+	}
+}
+body.is-ready {
+	.app-init-effect {
+		&__counter {
+			pointer-events: none;
+		}
+	}
+}
+// lines
+.lines {
+	&__item {
+		opacity: 0.4;
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 0.1rem;
+		background-color: var(--color-secondary);
+		z-index: 2;
+	}
+	$top: $grid-height;
 
+	@for $i from 1 through 5 {
+		.lines__item:nth-child(#{$i}) {
+			top: $i * $top;
+		}
+	}
+}

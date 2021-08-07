@@ -1,0 +1,75 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.large-cta {
+	display: block;
+	height: $grid-height;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: clamp(10rem, 17vw, 25rem);
+	.main-grid {
+		position: relative;
+		height: 100%;
+	}
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0.1rem;
+		background-color: var(--color-secondary);
+	}
+	&:after {
+		top: auto;
+		bottom: 0;
+	}
+	// text
+	&__text {
+		@include font-primary;
+		position: absolute;
+		left: 0;
+		top: 55%;
+		transform: translateY(-50%);
+		font-size: clamp(3.8rem, 6.389vw, 14.2rem);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	&__reveal {
+		@include font-secondary-bold;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(100%) skew(-0.8rad);
+		font-size: clamp(3.8rem, 6vw, 7rem);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	// icon
+	&__icon {
+		fill: var(--color-secondary);
+		width: 8rem;
+		height: 8rem;
+		position: absolute;
+		right: 0;
+		margin-top: 4vh;
+		transition: transform $transition;
+	}
+}
+
+// hover
+@include viewport-mouse {
+	.large-cta:hover {
+		.large-cta__text {
+			transform: translateY(-28rem) skew(0.8rad);
+		}
+		.large-cta__reveal {
+			transform: translateY(-60%) skew(0);
+		}
+		.large-cta__icon {
+			transform: scale(1.5) rotate(360deg) translateX(-2rem);
+		}
+	}
+}

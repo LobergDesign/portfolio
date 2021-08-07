@@ -1,0 +1,115 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.header-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	z-index: 10;
+	transition: visibility 1.4s $transition--cubic;
+	&__bg {
+		position: relative;
+		width: 100%;
+		height: $grid-height;
+		background-color: var(--color-alternative);
+		transform-origin: top left;
+		transform: scaleX(0);
+		transition: transform $transition--slow;
+	}
+	&__bg:not(:last-of-type):after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 0.1rem;
+		background-color: var(--color-secondary);
+		opacity: 0.15;
+	}
+
+	@for $i from 1 through 6 {
+		&__bg:nth-child(#{$i}) {
+			transition-delay: $i * 0.03s;
+		}
+	}
+	&__list {
+		list-style-type: none;
+		position: fixed;
+		top: $grid-height * 2;
+		left: 0;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		li {
+			height: $grid-height;
+			overflow: hidden;
+			text-align: center;
+		}
+		li a {
+			height: 100%;
+			transform-origin: top left;
+			padding-top: 1.5rem;
+			display: block;
+			line-height: 1;
+			@include font-primary;
+			font-size: clamp(3.8rem, 8vw, 11rem);
+			color: var(--color-secondary);
+			transform: translateY(110%) skew(-0.8rad);
+			transition: transform $transition--slow;
+			will-change: transform;
+			transition-delay: 0s;
+		}
+	}
+	// hover effect
+	&__list-text, &__list-reveal {
+		position: absolute;
+		left: 50%;
+		top:50%;
+		transform: translateY(-45%) translateX(-50%);
+		transition: transform $transition;
+		will-change: transform;
+	}
+	&__list-reveal {
+		@include font-secondary-regular;
+		font-size: clamp(3.8rem, 10vw, 13rem);
+		transform: translateY(100%) skew(-0.8rad)  translateX(-50%);
+	}
+	// icon
+	&__list-icon {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform-origin: top center;
+		transform: scale(1) rotate(0deg) translateY(-50%);
+		transition: transform $transition;
+	}
+}
+// hover
+@include viewport-mouse {
+	.header-menu.is-active .header-menu__list li:hover {
+		.header-menu__list-icon {
+			transform: scale(1.2) rotate(360deg) translateY(-50%);
+		}
+		.header-menu__list-text{
+			transform: translateY(-200%) skew(0.8rad) translateX(-50%);
+		}
+		.header-menu__list-reveal{
+			transform: translateY(-55%) skew(0) translateX(-50%);
+		}
+	}
+}
+
+// active state
+.header-menu.is-active {
+	visibility: visible;
+	.header-menu__bg {
+		transform: scaleX(100%);
+	}
+	.header-menu__list li a {
+		transform: translateY(0) skew(0);
+		transition-delay: 0.3s;
+	}
+}

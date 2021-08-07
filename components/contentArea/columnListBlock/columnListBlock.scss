@@ -1,0 +1,25 @@
+// @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+
+.column-list-block {
+	&__title {
+		padding-bottom: 1rem;
+		margin-bottom: 2rem;
+		position: relative;
+		min-height: 5rem;
+	}
+	&__title:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: var(--color-secondary);
+		height: 0.1rem;
+	}
+	&__list-content li{
+		@include font-primary;
+		font-size: 1.2rem;
+		margin-bottom: .4rem;
+	}
+}
