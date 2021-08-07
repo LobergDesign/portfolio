@@ -17,7 +17,9 @@ export default class TextBlock extends Vue {
 	mounted() {
 		this.triggerAnimation().setInital();
 		this.$nextTick(() => {
-			this.triggerAnimation().textBlockAnimation();
+			setTimeout(() =>{
+				this.triggerAnimation().textBlockAnimation();
+			},500);
 		});
 	}
 
@@ -56,5 +58,8 @@ export default class TextBlock extends Vue {
 			});
 		};
 		return { setInital, textBlockAnimation };
+	}
+	beforeDestroy(){
+		this.triggerAnimation().setInital();
 	}
 }
