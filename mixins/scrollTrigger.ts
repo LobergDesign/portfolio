@@ -4,35 +4,46 @@ import { Vue, Component } from "nuxt-property-decorator";
 export default class ScrollTriggerClass extends Vue {
 	private $gsap!: IGsap;
 	private $ScrollTrigger!: IScrollTrigger;
+	// beforeDestroy() {
 
-	mounted() {
-		this.triggerAnimation();
-  
-	}
+	// 	console.log("beforeDestroy");
+	// 	// @ts-ignore
+	// 	this.$ScrollTrigger.kill();
+	// }
+	// mounted() {
+	// 	// @ts-ignore
+	// 	this.$ScrollTrigger.create();
+	// }
 
-	
-	private triggerAnimation() {
-		const gsap = this.$gsap;
-		const scrolltrigger = this.$ScrollTrigger;
-		const target = ".set-animation";
-		// const anim = gsap.to(target, {
-		// 	x: 400,
-		// 	rotation: 360,
-		// 	duration: 3,
-		// });
-		// scrolltrigger.create({
-		// 	trigger: target,
-		// 	animation: anim,
-		// });
+	// private triggerAnimation() {
+	// 	const gsap = this.$gsap;
+	// 	const scrolltrigger = this.$ScrollTrigger;
 
-		gsap.utils.toArray(target).forEach((blockSection: any) => {
-			scrolltrigger.create({
-				trigger: blockSection,
-				start: "-200px center",
-				onEnter: () => {
-					blockSection.classList.add("in-view");
-				},
-			});
-		});
-	}
+	// 	const textBlockAnimation = () => {
+	// 		const target = ".set-animation";
+
+	// 		const set = gsap.set(target, {
+	// 			y: -100,
+	// 			opacity: 0,
+	// 		});
+	// 		const to = () => {
+	// 			gsap.to(target, {
+	// 				opacity: 1,
+	// 				y: 0,
+	// 				duration: 1,
+	// 			});
+	// 		};
+
+	// 		gsap.utils.toArray(target).forEach((blockSection: any) => {
+	// 			set;
+	// 			scrolltrigger.create({
+	// 				trigger: blockSection,
+	// 				start: "-100px center",
+	// 				onEnter: () => to(),
+	// 			});
+	// 		});
+	// 	};
+
+	// 	return { textBlockAnimation };
+	// }
 }

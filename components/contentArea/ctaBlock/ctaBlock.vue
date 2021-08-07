@@ -1,5 +1,5 @@
 <template>
-	<h2 class="cta-block set-animation">
+	<h2 class="cta-block">
 		<div class="main-grid">
 			<span class="cta-block__title flex-vertical-center">
 				{{ data.title[0] }}

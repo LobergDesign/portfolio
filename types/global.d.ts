@@ -28,11 +28,14 @@ declare interface IGsap {
 	timeline: Function;
 	getProperty: Function;
 	fromTo: Function;
+	from: Function;
 	utils: any;
 	quickSetter: Function;
 }
 declare interface IScrollTrigger {
 	create: Function;
+	getAll: Function;
+	refresh: Function;
 
 }
 // response
