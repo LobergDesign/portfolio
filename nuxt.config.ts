@@ -85,7 +85,7 @@ export default {
 					headers: {
 						authorization:
 							"Bearer " +
-							(process.env.BASE_URL === "https://portfolio-preview-hh4qq.ondigitalocean.app/"
+							(process.env.BASE_URL === "https://portfolio-preview-prod.netlify.app/"
 								? process.env.GRAPHQL_PREVIEW_TOKEN
 								: process.env.GRAPHQL_TOKEN),
 					},
