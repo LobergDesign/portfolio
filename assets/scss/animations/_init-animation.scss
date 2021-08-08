@@ -4,12 +4,14 @@
 	left: 0;
 	width: 100%;
 	&__counter {
+		visibility: hidden;
 		position: fixed;
 		bottom: -10rem;
 		right: -5rem;
 		@include font-primary;
 		font-size: clamp(3.8rem, 13.889vw, 20rem);
 		z-index: 5;
+		transition: $transition;
 	}
 	&__counter-number {
 		display: inline-block;
@@ -27,6 +29,16 @@ body.is-ready {
 	}
 }
 // lines
+.lines-effect{
+	visibility: hidden; 
+}
+[data-lines]{
+	height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .lines {
 	&__item {
 		opacity: 0.4;
@@ -38,6 +50,7 @@ body.is-ready {
 		height: 0.1rem;
 		background-color: var(--color-secondary);
 		z-index: 2;
+	
 	}
 	$top: $grid-height;
 

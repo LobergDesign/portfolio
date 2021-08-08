@@ -1,7 +1,7 @@
 <template>
-	<footer class="main-grid footer">
+	<footer class="main-grid footer" data-animation-section>
 		<div class="container">
-			<div class="row">
+			<div class="row" data-animation-item>
 				<div class="col-12">
 					<div class="cta">
 						<a :href="'mailto:' + data.email" class="footer__link"
@@ -12,8 +12,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-	
+			<div class="row" data-animation-item>
 				<div class="col-12 flex-end">
 					<div class="footer__social">
 						<span class="footer__social-text">connect: </span>

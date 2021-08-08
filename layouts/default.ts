@@ -12,61 +12,81 @@ export default class Default extends Vue {
 	private gsapEeasing: string = "power1.out";
 	// main gsap handler
 	private gsapOnLoadHandler() {
-		window.scrollTo(0, 0);
 		document.body.style.overflow = "hidden";
-		const someFunction = () => {
+		const tl = this.$gsap.timeline();
+		const gsap = this.$gsap;
+
+		const hideElements = () => {
 			tl.to("#counter, #percent", {
 				opacity: 0,
+				autoAlpha: 0,
 			});
 			document.body.style.overflow = "auto";
 			document.body.classList.add("is-ready");
 		};
-		const tl = this.$gsap.timeline();
 
 		const counter = () => {
-			tl.from("#counter", {
-				duration: 2.4,
-				opacity: 1,
-				ease: this.gsapEeasing,
-				innerText: 0,
-				roundProps: "innerText",
-				onUpdate: () => {
-					const target = document.getElementById("counter") as HTMLElement;
-					const val = this.$gsap.getProperty(target, "innerText");
-					target.innerText = val;
-				},
-				onComplete: someFunction,
-			});
+			tl.set(".app-init-effect__counter", {
+				visibility: "visible",
+				yPercent: 50,
+			})
+				.to(".app-init-effect__counter", {
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.1,
+					ease: this.gsapEeasing,
+				})
+				.to("#counter", {
+					duration: 2.4,
+					ease: this.gsapEeasing,
+					innerText: 100,
+					roundProps: "innerText",
+					delay: 0.25,
+					onUpdate: () => {
+						const target = document.getElementById("counter") as HTMLElement;
+						const val = gsap.getProperty(target, "innerText");
+						target.innerText = val;
+					},
+					onComplete: hideElements,
+				});
 		};
+
+	
 		const lines = () => {
 			const target = ".lines-effect";
-			this.$gsap.fromTo(
+			gsap.fromTo(
 				target,
-				{ xPercent: -100 },
-				{ xPercent: 0, duration: 2, stagger: 0.1, ease: this.gsapEeasing }
+				{ xPercent: -100, visibility: "visible" },
+				{
+					xPercent: 0,
+					duration: 2,
+					stagger: 0.1,
+					ease: this.gsapEeasing,
+					delay: 0.3,
+				}
 			);
-
-			this.$gsap.to(target, {
-				y: -200,
-				opacity: 0,
-				ease: "power3",
-				scrollTrigger: {
-					scrub: true,
-				},
-			});
 		};
 
 		return { counter, lines };
 	}
-
+	private linesScrollTrigger(){
+		this.$gsap.to("[data-lines]", {
+			yPercent: -36,
+			opacity: 0,
+			ease: this.gsapEeasing,
+			force3D: true,
+			scrollTrigger: {
+				scrub: true,
+			},
+		});
+	};
 	// initial state
 	public customBeforeAppear() {
 		this.gsapOnLoadHandler().counter();
 		this.gsapOnLoadHandler().lines();
 	}
-
 	mounted() {
-		window.scrollTo(0, 0);
+		this.linesScrollTrigger();
 	}
 	async fetch() {
 		const nuxtContext: Context = this.$nuxt.context;

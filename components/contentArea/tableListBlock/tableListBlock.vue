@@ -1,6 +1,6 @@
 <template>
 	<div class="main-grid main-grid__indent">
-		<div class="table-list-block">
+		<div class="table-list-block" data-class-animation>
 			<div class="container">
 				<h3>
 					{{data.sectionTitle}}

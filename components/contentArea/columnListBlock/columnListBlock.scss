@@ -1,4 +1,4 @@
-// @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
 
 .column-list-block {
@@ -7,6 +7,9 @@
 		margin-bottom: 2rem;
 		position: relative;
 		min-height: 5rem;
+		transform: scale(0);
+		opacity: 0;
+		transition: transform $transition--slow, opacity $transition--slow;
 	}
 	&__title:after {
 		content: "";
@@ -17,9 +20,30 @@
 		background-color: var(--color-secondary);
 		height: 0.1rem;
 	}
-	&__list-content li{
+	&__list-content li {
 		@include font-primary;
 		font-size: 1.2rem;
-		margin-bottom: .4rem;
+		margin-bottom: 0.4rem;
+		transform: scale(0);
+		opacity: 0;
+		transition: transform $transition--slow, opacity $transition--slow;
+	}
+	// active state
+	@for $i from 1 through 15 {
+		&__list-content li:nth-child(#{$i}){
+			transition-delay: $i * 0.05s;
+		}
+	}
+}
+
+//
+.column-list-block li.is-active {
+	.column-list-block__title {
+		transform: scale(1);
+		opacity: .4;
+	}
+	.column-list-block__list-content li{
+		transform: scale(1);
+		opacity: 1;
 	}
 }

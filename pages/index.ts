@@ -5,7 +5,10 @@ import scrollTrigger from "~/mixins/scrollTrigger";
 
 @Component({ mixins: [scrollTrigger] })
 export default class Frontpage extends Vue {
-	
+	public mounted(){
+		this.$nextTick(() => window.scrollTo(0, 0));
+	}
+
 	async asyncData({ $apiResource, error }: Context) {
 		const response = await $apiResource.getData(query);
 		const responseData = response.data;

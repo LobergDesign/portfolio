@@ -29,6 +29,6 @@ export default class Hero extends Vue {
 		});
 	}
 	mounted() {
-		this.scrollEffect();
+		this.$nextTick(() => this.scrollEffect());
 	}
 }

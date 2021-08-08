@@ -23,7 +23,10 @@ export default {
 	router: {
 		trailingSlash: true,
 		linkActiveClass: "is-active",
-		extendRoutes: async (routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
+		extendRoutes: async (_routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
+		scrollBehavior(_to: any, _from: any, _savedPosition: any) {
+			return { x: 0, y: 0 };
+		},
 	},
 	generate: {
 		fallback: true,
@@ -137,5 +140,41 @@ export default {
 		ts: {
 			silent: true,
 		},
+	},
+	pageTransition: {
+		$gsap: {} as IGsap,
+		css: false,
+		beforeEnter(el: HTMLElement) {
+			// console.debug("beforeEnter, el", el);
+			// const q = this.$gsap.utils.selector(el);
+			// this.$gsap.set(q(".curtains__item"), {
+			// 	xPercent: 100,
+			// 	opacity: 0,
+			// });
+		},
+
+		enter(el: HTMLElement, done: boolean) {
+			console.debug("enter, el", el);
+
+			// this.$gsap.to(el.querySelectorAll(".curtains__item"), {
+			// 	opacity: 1,
+			// 	xPercent: -100,
+			// 	duration: 1,
+			// 	ease: "power2.inOut",
+			// 	onComplete: done,
+			// });
+		},
+
+		// leave(el: HTMLElement, done: boolean) {
+		// 	const q = this.$gsap.utils.selector(el);
+		// 	console.debug("leave, el", q(".curtains__item"));
+		// 	this.$gsap.to(el.querySelectorAll(".curtains__item"), {
+		// 		xPercent: -200,
+		// 		duration: 2,
+		// 		ease: "power2.inOut",
+		// 		autoAlpha:0,
+		// 		onComplete: done,
+		// 	});
+		// },
 	},
 };

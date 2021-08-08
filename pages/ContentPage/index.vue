@@ -1,5 +1,13 @@
 <template>
 	<main>
+			<!-- curtains -->
+		<div class="curtains">
+			<div class="curtains__item"></div>
+			<div class="curtains__item"></div>
+			<div class="curtains__item"></div>
+			<div class="curtains__item"></div>
+			<div class="curtains__item"></div>
+		</div>
 		<!-- hero -->
 		<Hero v-if="data.items[0].hero" :data="data.items[0].hero" />
 		<!-- content area -->

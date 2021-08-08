@@ -1,8 +1,8 @@
 <template>
 	<section class="main-grid main-grid__indent">
-		<div class="container">
+		<div class="container" data-animation-section>
 			<ul class="row row-ul work__list">
-				<li v-for="(item, index) in privateWorkUC.items" :key="index" class="col work__list-item">
+				<li v-for="(item, index) in privateWorkUC.items" :key="index" class="col work__list-item" data-animation-item>
 					<nuxt-link :to="'/work/' + item.slug + '/'">
 						<h4 v-if="item.pageTitle">
 							{{ item.pageTitle }}
@@ -16,7 +16,7 @@
 						<IconArrow />
 					</nuxt-link>
 				</li>
-				<li v-for="(item, i) in privateWork.items" :key="'index' + i" class="col work__list-item">
+				<li v-for="(item, i) in privateWork.items" :key="'index' + i" class="col work__list-item" data-animation-item>
 					<nuxt-link :to="'/work/' + item.slug + '/'">
 						<h4 v-if="item.pageTitle">
 							{{ item.pageTitle }}

@@ -58,7 +58,6 @@ export default class Footer extends Vue {
 	// Route watch
 	@Watch("$route")
 	public routeChange() {
-		window.scrollTo(0, 0);
 		// window.removeEventListener("scroll", this.setHeaderBg);
 		const isReadyClass = "is-ready";
 		const body = document.body;
