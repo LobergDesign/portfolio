@@ -19,7 +19,11 @@ declare interface IRouteItems {
 	route?: string;
 	name?: string;
 }
-
+// SEO
+declare interface ISeo{
+	seoDescription: string;
+	seoTitle: string;
+}
 // GSAP
 declare interface IGsap {
 	to: Function;

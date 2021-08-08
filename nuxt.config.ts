@@ -15,7 +15,12 @@ export default {
 			{ hid: "description", name: "description", content: "" },
 			{ name: "format-detection", content: "telephone=no" },
 		],
-		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+		link: [
+			{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+			{ rel: "icon", type: "image/png", href: "/favicon.png" },
+			{ rel: "alternate icon", href: "/favicon.ico" },
+			{ rel: "icon", type: "mask-icon", href: "/safari-pinned-tab.svg" },
+		],
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -24,9 +29,6 @@ export default {
 		trailingSlash: true,
 		linkActiveClass: "is-active",
 		extendRoutes: async (_routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
-		scrollBehavior(_to: any, _from: any, _savedPosition: any) {
-			return { x: 0, y: 0 };
-		},
 	},
 	generate: {
 		fallback: true,
