@@ -10,3 +10,10 @@
 	width: 100%;
 	max-width: 100%;
 }
+
+@include viewport-small{
+	.main-grid{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}

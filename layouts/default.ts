@@ -1,5 +1,5 @@
 import { Context } from "@nuxt/types";
-import { Vue, Component, Watch } from "nuxt-property-decorator";
+import { Vue, Component } from "nuxt-property-decorator";
 import { query } from "~/queries/global";
 
 @Component

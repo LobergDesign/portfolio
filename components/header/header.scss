@@ -19,7 +19,6 @@
 		transition: color $transition;
 	}
 
-	
 	// value one
 	a {
 		position: relative;
@@ -65,7 +64,6 @@
 	}
 }
 
-
 // Initial animation
 body.is-ready {
 	.init-animation {
@@ -102,6 +100,17 @@ body.is-ready {
 		}
 		span:last-child {
 			transition-delay: 0.12s;
+		}
+	}
+}
+
+@include viewport-small{
+	.header{
+		width: 100%;
+		left: 0;
+		&__menu-icon{
+			padding-right: 1rem;
+			margin-top: 1rem;
 		}
 	}
 }

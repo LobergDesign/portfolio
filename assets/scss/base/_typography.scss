@@ -21,7 +21,7 @@ h3,
 h1,
 .headline-1 {
 	margin-top: 0;
-	font-size: clamp(3.8rem, 8vw, 11rem);
+	font-size: clamp(3rem, 8vw, 11rem);
 }
 .greeting {
 	@include font-secondary-regular;

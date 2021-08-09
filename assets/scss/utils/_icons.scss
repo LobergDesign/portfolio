@@ -1,6 +1,8 @@
+
+$arrow-icon-size: clamp(3rem, 6vw, 8rem);
 .icon-arrow {
-	width: 8rem;
-	height: 8rem;
+	width: $arrow-icon-size;
+	height: $arrow-icon-size;
 	path{
 		fill: var(--color-secondary);
 	}

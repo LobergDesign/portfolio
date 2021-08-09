@@ -1,6 +1,6 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
-// @import "~/assets/scss/tools/_mixins.scss";
+@import "~/assets/scss/tools/_mixins.scss";
 
 .circular-effect {
 	transform: scale(0);
@@ -23,4 +23,10 @@ body.is-ready {
 		transition-delay: .15s;
 		transform: scale(1);
 	}
+}
+@include viewport-small{
+	.circular-effect {
+		max-width: 200px;
+		max-height: 200px;
+	}	
 }

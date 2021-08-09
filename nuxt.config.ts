@@ -156,7 +156,7 @@ export default {
 		},
 
 		enter(el: HTMLElement, done: boolean) {
-			console.debug("enter, el", el);
+			// console.debug("enter, el", el);
 
 			// this.$gsap.to(el.querySelectorAll(".curtains__item"), {
 			// 	opacity: 1,

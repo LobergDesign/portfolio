@@ -4,29 +4,29 @@
 			<div class="main-grid">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-4 flex-vertical-center">
+						<div class="col-sm-4 col-6 flex-vertical-center">
 							<div class="init-animation">
-								<nuxt-link to="/about/" hide-on-scroll>
-									<span>
-										{{ data.headerValueOne }}
-									</span>
-									<span>About</span>
-								</nuxt-link>
-							</div>
-						</div>
-						<div class="col-sm-4 flex-center-center">
-							<div class="init-animation">
-								<span hide-on-scroll>
 									<nuxt-link to="/" hide-on-scroll>
 										<span>
 											{{ data.headerValueTwo }}
 										</span>
 										<span>Home</span>
 									</nuxt-link>
+							</div>
+						</div>
+						<div class="col-sm-4 flex-center-center hide-on-mobile">
+							<div class="init-animation">
+								<span hide-on-scroll>
+									<nuxt-link to="/about/" hide-on-scroll>
+									<span>
+										{{ data.headerValueOne }}
+									</span>
+									<span>About</span>
+								</nuxt-link>
 								</span>
 							</div>
 						</div>
-						<div class="col-sm-4 flex-end">
+						<div class="col-sm-4 col-6 flex-end">
 							<div class="init-animation">
 								<button type="button" class="header__menu-icon" v-on:click="toggleMenu()">
 									<span></span>

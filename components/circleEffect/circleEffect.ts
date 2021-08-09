@@ -11,13 +11,22 @@ export default class CircleEffect extends Vue {
 
 	private scaleOnScroll() {
 		const target = "[data-scale-down]";
-		this.$gsap.to(target, {
-			scale: 0,
-			ease: "power2",
-			scrollTrigger: {
-				scrub: true,
-			},
-		});
+
+		const scale = () => {
+			this.$gsap.to(target, {
+				scale: 0,
+				ease: "power2",
+				scrollTrigger: {
+					scrub: true,
+				},
+			});
+		};
+		const init = () => {
+			this.$gsap.set(target, {
+				scale: 1,
+			});
+		};
+		return { scale, init };
 	}
 	private rotate() {
 		const tl = this.$gsap.timeline();
@@ -31,9 +40,14 @@ export default class CircleEffect extends Vue {
 	}
 
 	mounted() {
+		console.debug("mounted");
+		this.scaleOnScroll().init();
 		this.$nextTick(() => {
 			this.rotate();
-			this.scaleOnScroll();
+			setTimeout(() => {
+				console.debug("mounted scale");
+				this.scaleOnScroll().scale();
+			}, 500);
 		});
 	}
 }

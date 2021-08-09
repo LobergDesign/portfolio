@@ -57,15 +57,6 @@
 		opacity: 0;
 		transition: transform $transition--slow, opacity $transition--slow;
 	}
-	// info section
-	// &__info-section {
-	// 	position: absolute;
-	// 	right: 20vw;
-	// 	text-align: right;
-	// 	p{
-	// 		margin: 0;
-	// 	}
-	// }
 	// spinner placement
 	&__circle-effect {
 		position: absolute;
@@ -91,5 +82,25 @@ body.is-ready {
 		transition-delay: 0.2s;
 		transform: scale(1);
 		opacity: 1;
+	}
+}
+
+@include viewport-small {
+	.hero {
+		// greeting
+		.greeting {
+			font-size: 3.4rem;
+		}
+		// title
+		&__text-wrap span {
+			transform: translateY(200%) skew(-0.8rad);
+		}
+		// circle effect
+		&__circle-effect {
+			left: -2rem;
+			bottom: -2rem;
+			height: 20rem;
+			width: 20rem;
+		}
 	}
 }

@@ -6,8 +6,10 @@
 }
 
 .light-mode {
-	--color-primary: #{$color-main-light};
-	--color-secondary: #{$color-main-dark};
+	// --color-primary: #{$color-main-light};
+	// --color-secondary: #{$color-main-dark};
+	--color-primary: #{$color-main-dark};
+	--color-secondary: #{$color-main-light};
 }
 
 html {

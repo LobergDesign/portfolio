@@ -35,7 +35,7 @@
 		top: 55%;
 		transform: translateY(-50%);
 		font-size: clamp(3.8rem, 6.389vw, 14.2rem);
-		transition: transform $transition;
+		transition: transform $transition--slow;
 		will-change: transform;
 	}
 	&__reveal {
@@ -64,7 +64,7 @@
 @include viewport-mouse {
 	.large-cta:hover {
 		.large-cta__text {
-			transform: translateY(-28rem) skew(0.8rad);
+			transform: translateY(-30rem) skew(0.8rad);
 		}
 		.large-cta__reveal {
 			transform: translateY(-60%) skew(0);
