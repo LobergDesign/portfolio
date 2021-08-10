@@ -7,7 +7,7 @@
 	height: $grid-height;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: clamp(10rem, 17vw, 25rem);
+	margin-bottom: clamp(2rem, 17vw, 25rem);
 	.main-grid {
 		position: relative;
 		height: 100%;
@@ -20,7 +20,7 @@
 		left: 0;
 		width: 100%;
 		height: 0.1rem;
-		opacity: .4;
+		opacity: 0.4;
 		background-color: var(--color-secondary);
 	}
 	&:after {
@@ -34,7 +34,7 @@
 		left: 0;
 		top: 55%;
 		transform: translateY(-50%);
-		font-size: clamp(3.8rem, 6.389vw, 14.2rem);
+		font-size: clamp(2.8rem, 6.389vw, 14.2rem);
 		transition: transform $transition--slow;
 		will-change: transform;
 	}
@@ -71,6 +71,21 @@
 		}
 		.large-cta__icon {
 			transform: scale(1.5) rotate(360deg) translateX(-2rem);
+		}
+	}
+}
+
+@include viewport-small {
+	.large-cta {
+		&__text {
+			left: 15px;
+		}
+		&__icon {
+			width: 3rem;
+			height: 3rem;
+
+			right: 15px;
+			margin-top: 6.5vh;
 		}
 	}
 }

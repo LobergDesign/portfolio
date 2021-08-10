@@ -95,6 +95,9 @@ body.is-ready {
 		&__text-wrap span {
 			transform: translateY(200%) skew(-0.8rad);
 		}
+		&__text-wrap span.greeting {
+			transform: translateY(250%) skew(-0.8rad);
+		}
 		// circle effect
 		&__circle-effect {
 			left: -2rem;

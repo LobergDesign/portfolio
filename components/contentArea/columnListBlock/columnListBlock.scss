@@ -1,5 +1,6 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
 
 .column-list-block {
 	&__title {
@@ -45,5 +46,16 @@
 	.column-list-block__list-content li{
 		transform: scale(1);
 		opacity: 1;
+	}
+}
+
+@include viewport-medium{
+	.column-list-block{
+		&__title{
+			min-height: 0;
+		}
+		&__item{
+			margin-bottom: 2rem;
+		}
 	}
 }

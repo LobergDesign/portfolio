@@ -3,11 +3,11 @@
 // @import "~/assets/scss/tools/_mixins.scss";
 
 .footer {
-	padding: 10rem 0;
+	padding: clamp(4rem, 7vw, 10rem) 0;
 	position: relative;
 	// social
 	&__social {
-		margin-top: clamp(6rem, 10.417vw, 15rem);
+		margin-top: clamp(3rem, 6.417vw, 15rem);
 		svg {
 			width: 2rem;
 			height: 2rem;
@@ -35,6 +35,7 @@
 	&__social-text {
 		@include font-primary;
 		margin-right: 1rem;
+		font-size: clamp(1.5rem, 2vw, 1.6rem);
 	}
 }
 

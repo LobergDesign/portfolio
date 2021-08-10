@@ -37,7 +37,7 @@ export default class Default extends Vue {
 					ease: this.gsapEeasing,
 				})
 				.to("#counter", {
-					duration: 2.4,
+					duration: 1.8,
 					ease: this.gsapEeasing,
 					innerText: 100,
 					roundProps: "innerText",
@@ -59,7 +59,7 @@ export default class Default extends Vue {
 				{ xPercent: -100, visibility: "visible" },
 				{
 					xPercent: 0,
-					duration: 2,
+					duration: 1.3,
 					stagger: 0.1,
 					ease: this.gsapEeasing,
 					delay: 0.3,

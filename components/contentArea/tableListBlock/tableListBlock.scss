@@ -1,5 +1,6 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
 
 $inner-spacing: 1.4rem;
 .table-list-block {
@@ -36,7 +37,7 @@ $inner-spacing: 1.4rem;
 	&__item:first-child:before {
 		top: 0;
 	}
-	&__content{
+	&__content {
 		opacity: 0;
 		transition: $transition;
 	}
@@ -50,7 +51,7 @@ $inner-spacing: 1.4rem;
 			}
 		}
 		&__item:nth-child(#{$i}) {
-			.table-list-block__content{
+			.table-list-block__content {
 				transition-delay: $i * 0.08s;
 			}
 		}
@@ -70,7 +71,15 @@ $inner-spacing: 1.4rem;
 		transform: scale(1);
 		opacity: 1;
 	}
-	.table-list-block__content{
+	.table-list-block__content {
 		opacity: 1;
+	}
+}
+
+@include viewport-small {
+	.table-list-block {
+		&__content .col-sm-4 {
+			margin-bottom: 2rem;
+		}
 	}
 }

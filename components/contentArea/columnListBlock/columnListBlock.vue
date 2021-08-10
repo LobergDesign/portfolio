@@ -3,7 +3,7 @@
 		<div class="column-list-block">
 			<div class="container">
 				<ul class="row row-ul">
-					<li v-for="(item, index) in data.listItemsCollection.items" :key="index" class="col-lg-4" data-class-animation>
+					<li v-for="(item, index) in data.listItemsCollection.items" :key="index" class="col-lg-4 column-list-block__item" data-class-animation>
 						<h2 class="headline-4 column-list-block__title text-faint">
 							{{ item.title }}
 						</h2>

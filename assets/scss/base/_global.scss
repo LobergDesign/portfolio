@@ -54,7 +54,7 @@ body {
 		z-index: 100;
 		// right: 0;
 		// position: absolute;
-		 transform: translateX(100%);
+		transform: translateX(100%);
 		background-color: blue;
 	}
 }
@@ -71,7 +71,7 @@ body {
 		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: clamp(3.8rem, 6.389vw, 14.2rem);
+		font-size: clamp(2.8rem, 6.389vw, 14.2rem);
 		transition: transform $transition;
 		will-change: transform;
 	}
@@ -119,5 +119,11 @@ img {
 	video,
 	picture {
 		filter: invert(100);
+	}
+}
+
+@include viewport-small {
+	.cta {
+		height: 14rem;
 	}
 }

@@ -40,12 +40,10 @@ export default class CircleEffect extends Vue {
 	}
 
 	mounted() {
-		console.debug("mounted");
 		this.scaleOnScroll().init();
 		this.$nextTick(() => {
 			this.rotate();
 			setTimeout(() => {
-				console.debug("mounted scale");
 				this.scaleOnScroll().scale();
 			}, 500);
 		});

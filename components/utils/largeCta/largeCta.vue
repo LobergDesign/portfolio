@@ -6,7 +6,7 @@
 					<div class="row">
 						<div class="col-12">
 							<span class="large-cta__text">Launch site</span>
-							<span class="large-cta__reveal">{{ url }}</span>
+							<span class="large-cta__reveal hide-on-mobile">{{ url }}</span>
 							<IconArrow class="large-cta__icon" />
 						</div>
 					</div>

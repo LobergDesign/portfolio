@@ -9,16 +9,16 @@
 		bottom: -10rem;
 		right: -5rem;
 		@include font-primary;
-		font-size: clamp(3.8rem, 13.889vw, 20rem);
+		font-size: clamp(7rem, 13.889vw, 20rem);
 		z-index: 5;
 		transition: $transition;
 	}
-	&__counter-number {
-		display: inline-block;
-		transform: translateX(clamp(3.8rem, 4.167vw, 6rem));
-	}
+	&__counter-number,
 	&__counter-percent {
 		display: inline-block;
+	}
+	&__counter-number{
+	    transform: translateX(6rem);
 	}
 }
 body.is-ready {
@@ -29,15 +29,15 @@ body.is-ready {
 	}
 }
 // lines
-.lines-effect{
-	visibility: hidden; 
+.lines-effect {
+	visibility: hidden;
 }
-[data-lines]{
+[data-lines] {
 	height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 .lines {
 	&__item {
@@ -50,13 +50,24 @@ body.is-ready {
 		height: 0.1rem;
 		background-color: var(--color-secondary);
 		z-index: 2;
-	
 	}
 	$top: $grid-height;
 
 	@for $i from 1 through 5 {
 		.lines__item:nth-child(#{$i}) {
 			top: $i * $top;
+		}
+	}
+}
+
+@include viewport-medium {
+	.app-init-effect {
+		&__counter {
+			bottom: -3rem;
+			right: -3rem;
+		}
+		&__counter-number{
+			transform: translateX(2rem);
 		}
 	}
 }
