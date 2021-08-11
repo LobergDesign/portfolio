@@ -24,11 +24,6 @@ export default class Footer extends Vue {
 		this.isMenuActive = !this.isMenuActive;
 	}
 
-	// private headerScroll(){
-	// 	const windowOffset = window.pageYOffset;
-	// 	windowOffset > 200 ? (this.isHeaderTransparent = false) : (this.isHeaderTransparent = true);
-	// }
-
 	private controlHeader() {
 		const initScrolltrigger = this.$ScrollTrigger.create({
 			start: "top",

@@ -10,6 +10,15 @@ export default class Default extends Vue {
 	private $gsap!: IGsap;
 
 	private gsapEeasing: string = "power1.out";
+
+	private isSmallDevices(){
+		if (window.matchMedia("(max-width: 768px)").matches) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	// main gsap handler
 	private gsapOnLoadHandler() {
 		document.body.style.overflow = "hidden";
@@ -37,7 +46,7 @@ export default class Default extends Vue {
 					ease: this.gsapEeasing,
 				})
 				.to("#counter", {
-					duration: 1.8,
+					duration: this.isSmallDevices() ? 0.7 : 1.8,
 					ease: this.gsapEeasing,
 					innerText: 100,
 					roundProps: "innerText",
@@ -51,7 +60,6 @@ export default class Default extends Vue {
 				});
 		};
 
-	
 		const lines = () => {
 			const target = ".lines-effect";
 			gsap.fromTo(
@@ -59,7 +67,7 @@ export default class Default extends Vue {
 				{ xPercent: -100, visibility: "visible" },
 				{
 					xPercent: 0,
-					duration: 1.3,
+					duration:this.isSmallDevices() ? .35:  1.3,
 					stagger: 0.1,
 					ease: this.gsapEeasing,
 					delay: 0.3,
@@ -69,7 +77,7 @@ export default class Default extends Vue {
 
 		return { counter, lines };
 	}
-	private linesScrollTrigger(){
+	private linesScrollTrigger() {
 		this.$gsap.to("[data-lines]", {
 			yPercent: -36,
 			opacity: 0,
@@ -79,7 +87,7 @@ export default class Default extends Vue {
 				scrub: true,
 			},
 		});
-	};
+	}
 	// initial state
 	public customBeforeAppear() {
 		this.gsapOnLoadHandler().counter();
