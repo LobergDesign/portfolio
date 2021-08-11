@@ -56,6 +56,7 @@
 			display: block;
 			line-height: 1;
 			@include font-primary;
+			font-size: 4rem;
 			font-size: clamp(4rem, 8vw, 11rem);
 			color: var(--color-secondary);
 			transform: translateY(110%) skew(-0.8rad);
@@ -115,7 +116,7 @@
 .header-menu.is-active {
 	visibility: visible;
 	.header-menu__bg {
-		transform: scaleX(100%);
+		transform: scaleX(1);
 	}
 	.header-menu__list li a {
 		transform: translateY(0) skew(0);
