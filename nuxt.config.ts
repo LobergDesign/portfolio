@@ -117,8 +117,6 @@ export default {
 	},
 	sitemap: {
 		hostname: process.env.BASE_URL || "http://localhost:3000",
-		// exclude sitemap urls
-		exclude: ["/about/", "/news/**"],
 		// add trailing slash to final sitemap
 		trailingSlash: true,
 		priority: 1,
