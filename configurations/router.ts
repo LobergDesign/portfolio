@@ -21,7 +21,7 @@ const siteStructure = async () => {
 	};
 };
 
-export async function extendRoutes(resolve: (...param: string[]) => Vue) {
+export async function extendRoutes(routes: any[], resolve: (...param: string[]) => Vue) {
 	const site = await siteStructure();
 	const sitemapRoutes: IRouteItems[] = [];
 
@@ -44,12 +44,11 @@ export async function extendRoutes(resolve: (...param: string[]) => Vue) {
 		path: "/",
 		component: resolve(`~/pages/index.vue`),
 	});
-	return [...sitemapRoutes];
+	return [...routes, ...sitemapRoutes];
 }
 
 export async function generate() {
 	const site = await siteStructure();
-
 	let routes: IRouteItems[] = [];
 	site.menuItems.forEach((item: IMenuItems) => {
 		if (item.slug !== null) {
@@ -66,5 +65,5 @@ export async function generate() {
 		}
 	});
 
-	return [...routes];
+	return routes;
 }

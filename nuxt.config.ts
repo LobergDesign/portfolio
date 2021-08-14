@@ -28,13 +28,11 @@ export default {
 	router: {
 		trailingSlash: true,
 		linkActiveClass: "is-active",
-		extendRoutes: async (_routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
+		extendRoutes: async (routes: any, resolve: (...param: string[]) => Vue) => await extendRoutes(routes, resolve),
 	},
 	generate: {
 		fallback: true,
-		// exclude pages thats unused
-		// eg. [/about/, /news/]
-		exclude: [/ContentPage/],
+		exclude: [/ContentPage/, /WorkItem/],
 		crawler: false,
 		routes: async () => await generate(),
 	},
@@ -49,6 +47,7 @@ export default {
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
+		"@nuxt/components",
 		"nuxt-purgecss",
 		"@nuxt/image",
 		"@nuxtjs/color-mode",

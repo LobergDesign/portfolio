@@ -6,10 +6,9 @@ import setHead from "~/configurations/head";
 
 @Component({ mixins: [scrollTrigger] })
 export default class Frontpage extends Vue {
-
 	public seo!: ISeo;
 
-	public mounted(){
+	public mounted() {
 		this.$nextTick(() => window.scrollTo(0, 0));
 	}
 	head() {
@@ -24,7 +23,7 @@ export default class Frontpage extends Vue {
 				message: response.errors,
 			});
 		} else {
-				// @ts-ignore
+			// @ts-ignore
 			return { data: responseData, seo: responseData.seoSection };
 		}
 	}
