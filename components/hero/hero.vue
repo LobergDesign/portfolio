@@ -2,7 +2,7 @@
 	<section class="hero">
 		<h1 class="hero__text fade-out" :class="{ 'has-number': number }">
 			<span class="hero__text-wrap flex-vertical-center">
-				<span class="greeting"  v-if="data.greetingText">{{ data.greetingText }}</span>
+				<span class="greeting" v-if="data.greetingText">{{ data.greetingText }}</span>
 			</span>
 			<span class="hero__text-wrap flex-vertical-center flex-end" v-if="data.title && data.title[0]">
 				<span>{{ data.title[0] }}</span>

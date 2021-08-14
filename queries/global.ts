@@ -1,5 +1,5 @@
-const query = `query globalSettingsEntryQuery($isPreview: Boolean!) {
-    globalSettings(id: "4exnZopd4FhVaVLSGW87R1", preview:$isPreview) {
+const query = `query globalSettingsEntryQuery {
+    globalSettings(id: "4exnZopd4FhVaVLSGW87R1") {
       mainMenuCollection(limit:5) {
         items {
           model: __typename

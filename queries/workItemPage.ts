@@ -2,8 +2,8 @@ import { heroFragment } from "./fragments/hero";
 import { contentAreaFragment } from "./fragments/contentArea";
 import { seoFragment } from "./fragments/seo";
 
-const query = `query workItemPageQuery($slug: String!, $isPreview: Boolean!) {
-  data: workItemCollection(where: {slug: $slug}, limit: 1, preview:$isPreview) {
+const query = `query workItemPageQuery($slug: String!) {
+  data: workItemCollection(where: {slug: $slug}, limit: 1) {
     items{
       workNumber
       siteUrl

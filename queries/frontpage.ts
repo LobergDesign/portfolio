@@ -3,8 +3,8 @@ import { contentAreaFragment } from "./fragments/contentArea";
 import { privateWorkUnderConstructionFragment } from "./fragments/privateWorkUnderConstruction";
 import { privateWork } from "./fragments/privateWork";
 import { seoFragment } from "./fragments/seo";
-const query = `query contentPageEntryQuery($isPreview: Boolean!) {
-  data: contentPage(id: "6zBYL8g6YW9U2MzXiFY9vg", preview:$isPreview) {
+const query = `query contentPageEntryQuery {
+  data: contentPage(id: "6zBYL8g6YW9U2MzXiFY9vg") {
     hero {
       ...hero
     }

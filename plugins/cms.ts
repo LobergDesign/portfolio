@@ -25,7 +25,6 @@ export default function (ctx: Context, inject: Inject) {
 		try {
 			const response = await client.default.request(query, variables);
 			return response;
-
 		} catch (error: any) {
 			console.log("error from cms plugin", error);
 		}

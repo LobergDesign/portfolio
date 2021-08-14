@@ -32,8 +32,10 @@ export default {
 	},
 	generate: {
 		fallback: true,
-		crawler: false,
+		// exclude pages thats unused
+		// eg. [/about/, /news/]
 		exclude: [/ContentPage/],
+		crawler: false,
 		routes: async () => await generate(),
 	},
 
@@ -98,7 +100,15 @@ export default {
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
-	build: {},
+	build: {
+		babel: {
+			plugins: [
+				"@babel/plugin-proposal-class-properties",
+				"@babel/plugin-proposal-private-methods",
+				"@babel/plugin-proposal-private-property-in-object",
+			],
+		},
+	},
 	loading: false,
 	robots: {
 		UserAgent: "*",
