@@ -21,10 +21,14 @@ export default class Hero extends Vue {
 		const target = ".fade-out";
 		this.$gsap.to(target, {
 			scale: 0.7,
-			y: -100,
+			yPercent: -10,
+			opacity: 0.6,
 			ease: "power3",
 			scrollTrigger: {
-				scrub: true,
+				trigger: ".hero",
+				start: "top",
+				end: "bottom top-=100%",
+				scrub: 0.2,
 			},
 		});
 	}

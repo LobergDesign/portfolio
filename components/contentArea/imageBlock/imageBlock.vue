@@ -8,6 +8,7 @@
 						provider="cloudinary"
 						:src="data.image[0].url"
 						:alt="data.image[0].imageTitle"
+						width="1600"
 					/>
 				</div>
 			</div>

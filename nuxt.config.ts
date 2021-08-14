@@ -31,11 +31,10 @@ export default {
 		extendRoutes: async (_routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
 	},
 	generate: {
+		subFolders: true,
 		fallback: true,
-		// exclude pages thats unused
-		// eg. [/about/, /news/]
-		exclude: [/ContentPage/],
 		crawler: false,
+		exclude: [/ContentPage/],
 		routes: async () => await generate(),
 	},
 
@@ -157,7 +156,6 @@ export default {
 
 		enter(el: HTMLElement, done: boolean) {
 			// console.debug("enter, el", el);
-
 			// this.$gsap.to(el.querySelectorAll(".curtains__item"), {
 			// 	opacity: 1,
 			// 	xPercent: -100,

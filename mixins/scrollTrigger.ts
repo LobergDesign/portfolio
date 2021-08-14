@@ -14,7 +14,7 @@ export default class ScrollTriggerClass extends Vue {
 				targetSection && this.globalAnimations().textBlockAnimation();
 				targetSectionLines && this.globalAnimations().lineBlockAnimation();
 				targetElement && this.globalAnimations().addClassAnimation();
-			}, 500);
+			}, 800);
 		});
 	}
 
@@ -136,5 +136,12 @@ export default class ScrollTriggerClass extends Vue {
 		};
 
 		return { setInital, textBlockAnimation, setInitalLineBlockAnimation, lineBlockAnimation, addClassAnimation };
+	}
+	beforeDestroy() {
+		const targetSection = "[data-animation-section]";
+		const targetSectionLines = "[data-cta-animation-section]";
+
+		targetSection && this.globalAnimations().setInital();
+		targetSectionLines && this.globalAnimations().setInitalLineBlockAnimation();
 	}
 }

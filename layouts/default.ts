@@ -11,7 +11,7 @@ export default class Default extends Vue {
 
 	private gsapEeasing: string = "power1.out";
 
-	private isSmallDevices(){
+	private isSmallDevices() {
 		if (window.matchMedia("(max-width: 768px)").matches) {
 			return true;
 		} else {
@@ -67,7 +67,7 @@ export default class Default extends Vue {
 				{ xPercent: -100, visibility: "visible" },
 				{
 					xPercent: 0,
-					duration:this.isSmallDevices() ? .35:  1.3,
+					duration: this.isSmallDevices() ? 0.35 : 1.3,
 					stagger: 0.1,
 					ease: this.gsapEeasing,
 					delay: 0.3,
@@ -79,12 +79,15 @@ export default class Default extends Vue {
 	}
 	private linesScrollTrigger() {
 		this.$gsap.to("[data-lines]", {
-			yPercent: -36,
+			scaleY: 0.8,
+			yPercent: -10,
 			opacity: 0,
-			ease: this.gsapEeasing,
-			force3D: true,
+			ease: "power3",
 			scrollTrigger: {
-				scrub: true,
+				trigger: ".hero",
+				start: "top",
+				end: "bottom top-=100%",
+				scrub: 0.2,
 			},
 		});
 	}

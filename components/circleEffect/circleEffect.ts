@@ -14,10 +14,14 @@ export default class CircleEffect extends Vue {
 
 		const scale = () => {
 			this.$gsap.to(target, {
-				scale: 0,
-				ease: "power2",
+				scale: 0.2,
+				opacity: 0.2,
+				ease: "power1",
 				scrollTrigger: {
-					scrub: true,
+					trigger: ".hero",
+					start: "top",
+					end: "bottom top-=100%",
+					scrub: 0.6,
 				},
 			});
 		};
@@ -30,19 +34,24 @@ export default class CircleEffect extends Vue {
 	}
 	private rotate() {
 		const tl = this.$gsap.timeline();
-		tl.to("#circle", {
-			duration: "6",
-			ease: "none",
-			rotate: 360,
-			transformOrigin: "center center",
-			repeat: -1,
-		});
+
+		const initRotate = () => {
+			tl.to("#circle", {
+				duration: "6",
+				ease: "none",
+				rotate: 360,
+				transformOrigin: "center center",
+				repeat: -1,
+			});
+		};
+
+		return { initRotate };
 	}
 
 	mounted() {
 		this.scaleOnScroll().init();
 		this.$nextTick(() => {
-			this.rotate();
+			this.rotate().initRotate();
 			setTimeout(() => {
 				this.scaleOnScroll().scale();
 			}, 500);
