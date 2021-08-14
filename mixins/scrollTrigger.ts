@@ -109,7 +109,7 @@ export default class ScrollTriggerClass extends Vue {
 					scrollTrigger: {
 						trigger: section,
 						once: true,
-						start: "-200px center",
+						start: "-300px center",
 						onEnter: () => to(section, i),
 					},
 				});
@@ -117,7 +117,6 @@ export default class ScrollTriggerClass extends Vue {
 		};
 
 		// add class on scroll
-
 		const addClassAnimation = () => {
 			const targetElement = "[data-class-animation]";
 			const sections = gsap.utils.toArray(targetElement);
@@ -126,7 +125,7 @@ export default class ScrollTriggerClass extends Vue {
 					scrollTrigger: {
 						trigger: section,
 						once: true,
-						start: "-250px center",
+						start: "-200px center",
 						onEnter: () => {
 							section.classList.add("is-active");
 						},

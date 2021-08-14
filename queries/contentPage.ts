@@ -4,8 +4,8 @@ import { privateWorkUnderConstructionFragment } from "./fragments/privateWorkUnd
 import { privateWork } from "./fragments/privateWork";
 import { seoFragment } from "./fragments/seo";
 
-const query = `query contentPageEntryQuery($slug: String!) {
-  data: contentPageCollection(where: {slug: $slug}, limit: 1) {
+const query = `query contentPageEntryQuery($slug: String!,$isPreview: Boolean!) {
+  data: contentPageCollection(where: {slug: $slug}, limit: 1, preview:$isPreview) {
     items{
       hero {
         ...hero
