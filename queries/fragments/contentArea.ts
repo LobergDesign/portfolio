@@ -47,4 +47,4 @@ const contentAreaFragment = `fragment contentArea on ComponentContentarea {
     }
   }
 }`;
-  export { contentAreaFragment };
+export { contentAreaFragment };
