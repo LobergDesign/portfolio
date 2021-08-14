@@ -31,7 +31,6 @@ export default {
 		extendRoutes: async (_routes: IRouteItems, resolve: (...param: string[]) => Vue) => await extendRoutes(resolve),
 	},
 	generate: {
-		subFolders: true,
 		fallback: true,
 		crawler: false,
 		exclude: [/ContentPage/],
