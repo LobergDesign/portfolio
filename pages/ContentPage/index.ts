@@ -7,7 +7,7 @@ import setHead from "~/configurations/head";
 @Component({ mixins: [scrollTrigger] })
 export default class ContentPage extends Vue {
 	public seo!: ISeo;
-	public mounted(){
+	public mounted() {
 		this.$nextTick(() => window.scrollTo(0, 0));
 	}
 	head() {
@@ -17,14 +17,15 @@ export default class ContentPage extends Vue {
 		const routeName = route.name as string;
 		const response = await $apiResource.getDynamicData(query, routeName);
 		const responseData = response.data;
+
 		if (!responseData) {
 			return error({
 				statusCode: response.status,
 				message: response.errors,
 			});
 		} else {
-				// @ts-ignore
-				return { data: responseData, seo: responseData.seoSection };
+			// @ts-ignore
+			return { data: responseData, seo: responseData.seoSection };
 		}
 	}
 }

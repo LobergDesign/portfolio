@@ -26,7 +26,7 @@ export default class WorkItemPage extends Vue {
 			});
 		} else {
 			// @ts-ignore
-			return { data: responseData, seo: responseData.seoSection };
+			return { data: responseData, seo: responseData.items[0].seoSection };
 		}
 	}
 }
