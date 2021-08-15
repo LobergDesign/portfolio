@@ -40,7 +40,9 @@ export default {
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	// plugins: ["~/plugins/cms", { src: "~/plugins/locomotive.js", ssr: false }],
 	plugins: ["~/plugins/cms"],
-
+	publicRuntimeConfig: {
+		baseUrl: process.env.BASE_URL,
+	},
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: [{ path: "~/components", extensions: ["vue"] }],
 

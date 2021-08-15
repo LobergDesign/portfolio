@@ -10,9 +10,8 @@ export default function (ctx: Context, inject: Inject) {
 
 	// get data from query
 	const getData = async (query: string) => {
-		const variables = { isPreview: setPreviewBool };
 		try {
-			const response = await client.default.request(query, variables);
+			const response = await client.default.request(query, isPreview);
 			return response;
 		} catch (error: any) {
 			console.log("error from cms plugin", error);
@@ -20,7 +19,6 @@ export default function (ctx: Context, inject: Inject) {
 	};
 
 	const getDynamicData = async (query: string, routePath: string) => {
-		// Get path from route and set isPreview boolean
 		const variables = { slug: routePath, isPreview: setPreviewBool };
 		try {
 			const response = await client.default.request(query, variables);
