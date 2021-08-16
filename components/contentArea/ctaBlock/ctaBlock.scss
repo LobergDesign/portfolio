@@ -1,12 +1,23 @@
 @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/tools/_mixins.scss";
 
 .cta-block {
-	transform:translateY(-$grid-height);
+	transform: translateY(-$grid-height);
 	margin: 0;
 	padding: 0;
 	position: relative;
 	padding-top: $grid-height;
 	&__title {
 		height: $grid-height;
+	}
+}
+@include viewport-medium {
+	.cta-block {
+		margin-top: 15rem;
+	}
+}
+@include viewport-small {
+	.cta-block {
+		margin-top: 9rem;
 	}
 }

@@ -1,5 +1,4 @@
 @import "~/assets/scss/settings/_vars.scss";
-// @import "~/assets/scss/settings/_fonts.scss";
 @import "~/assets/scss/tools/_mixins.scss";
 
 $work-icon: clamp(10rem, 15.278vw, 22rem);
@@ -46,7 +45,8 @@ $work-icon: clamp(10rem, 15.278vw, 22rem);
 	&__list-item:first-child {
 		@include col-5;
 	}
-	&__list-item:nth-of-type(2), &__list-item:nth-of-type(3) {
+	&__list-item:nth-of-type(2),
+	&__list-item:nth-of-type(3) {
 		@include col-7;
 	}
 }
@@ -55,5 +55,14 @@ $work-icon: clamp(10rem, 15.278vw, 22rem);
 .work__list-item:hover {
 	svg {
 		transform: scale(1.5);
+	}
+}
+
+@include viewport-small {
+	.work {
+		&__list-item {
+			margin-bottom: clamp(4rem, 5.556vw, 8rem);
+			min-width: 100%;
+		}
 	}
 }
