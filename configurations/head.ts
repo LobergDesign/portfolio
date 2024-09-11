@@ -32,6 +32,11 @@ function setHead(data: ISeo) {
 				property: "og:description",
 				content: data?.seoDescription || "",
 			},
+			{
+				hid: "og:image",
+				property: "og:image",
+				content: "/og.png", // Add the Open Graph image URL here
+			},
 		],
 	};
 	return meta;
